@@ -1,0 +1,45 @@
+<div class="bg-theme p-2  hover text-md-left text-center" [ngClass]="{'extra-padding':!isNotLoginPages()}" (click)="navigateToHome()">
+    <img src="../../../assets/RobinsonandHenry__Horizontal_White_Logo.png" style="width: 16rem;">
+    </div>
+    <div class="p-3 d-flex justify-content-between shadow" *ngIf="isNotLoginPages()">
+    <div class="align-self-center d-flex ml-2" >
+    <div class="mx-3">
+        <img src="../../../assets/menu.png" width="25" height="20" [routerLink]="['/usermenu/profile']" style="cursor: pointer;">
+        
+    </div>
+        <!-- <ul class="list-unstyled nav" *ngIf="isLoggedIn">
+            <li class="nav-item"  [ngClass]="{'active':routerEndPoint == 'home'}" (click)="openQuiryModal()">
+        <span class="icon">
+            <i class="fas fa-home"></i>
+        </span> <span class="nav-link merri-reg f-13">Home</span>
+            </li>
+            <li class="nav-item"  [ngClass]="{'active':routerEndPoint == 'calenderData'}" (click)="calenderPage()">
+    <span class="icon">
+        <i class="fas fa-calendar-alt"></i>
+    </span> <span class="nav-link merri-reg f-13">Calender</span>
+            </li>
+            <li class="nav-item" [ngClass]="{'active':routerEndPoint == 'mycase'}"  (mouseenter) ="mouseEnter() "   (click)="myCasePage()">
+    <span class="icon">
+        <img [src]="imgSrc" width="19">
+    </span> <span class="nav-link merri-reg f-13">My Cases</span>
+            </li>
+        </ul> -->
+    </div>
+    <div class="d-flex align-self-center mr-2" *ngIf="!isLoggedIn">
+        <span class=" theme-color align-self-center px-1 raleway-bold f-15 hover" 
+        style="vertical-align: middle !important;"><span (click)="loginPage()">LOGIN</span>/<span  (click)="signUpPage()">SIGN UP</span></span>
+        <span>
+            <img src="../../../assets/user.png" width="39" >
+        </span>
+    </div>
+    <div class="d-flex align-self-center mr-2" *ngIf="isLoggedIn">
+        <span class=" align-self-center px-4  hover" 
+        style="vertical-align: middle !important;" (click)="notificationPage()">
+    <img src="../../../assets/notifications.png">
+    </span>
+        <span>
+            <img src="../../../assets/ic_md@2x.png" width="39"  >
+        </span>
+    </div>
+    </div>
+    

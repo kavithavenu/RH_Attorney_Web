@@ -1,4 +1,344 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+    font-family: "merri reg";
+    src: url("assets/fonts/merri/Merriweather-Regular.otf") format("opentype");
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "merri bold";
+    src: url("assets/fonts/merri/Merriweather-Bold.otf") format("opentype");
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "merri reg";
+    src: url("assets/fonts/merri/Merriweather-Regular.otf") format("opentype");
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "merri black";
+    src: url("assets/fonts/merri/Merriweather-Black.otf") format("opentype");
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "raleway reg";
+    src: url("assets/fonts/raleway/Raleway-Regular.ttf") format("opentype");
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "raleway bold";
+    src: url("assets/fonts/raleway/Raleway-Bold.ttf") format("opentype");
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "raleway semibold";
+    src: url("assets/fonts/raleway/Raleway-SemiBold.ttf") format("opentype");
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "raleway medium";
+    src: url("assets/fonts/raleway/Raleway-Medium.ttf") format("opentype");
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "proxi regular";
+    src: url("assets/fonts/FontsFree-Net-ProximaNovaAltRegular.ttf") format("opentype");
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "open sans";
+    src: url("assets/fonts/openSans/OpenSans-Regular.ttf") format("opentype");
+    font-style: normal;
+  }
+  button:focus, button:active:focus, button.active:focus,input:focus {
+    outline: none !important;
+    outline-style: none !important;
+    }
+    .btn.focus,
+.btn:focus,
+.form-control:focus,
+.custom-select:focus,
+.custom-select:focus,li:focus,img:focus {
+  box-shadow: none !important;
+  outline: none !important;
+}
+  .proxi-reg{
+    font-family: "proxi regular",Roboto, "Helvetica Neue", sans-serif !important;
+  }
+  .open-sans{
+    font-family: "open sans",Roboto, "Helvetica Neue", sans-serif !important;
+  }
+  .raleway{
+      font-family: "raleway reg",Roboto, "Helvetica Neue", sans-serif !important;
+  }
+  .raleway-bold{
+    font-family: "raleway bold",Roboto, "Helvetica Neue", sans-serif !important;
+}
+.raleway-semibold{
+    font-family: "raleway semibold",Roboto, "Helvetica Neue", sans-serif !important;
+}
+.raleway-medium{
+    font-family: "raleway medium",Roboto, "Helvetica Neue", sans-serif !important;
+}
+  .merri{
+    font-family: "merri reg",Roboto, "Helvetica Neue", sans-serif  !important;
+}
+.merri-bold{
+  font-family: "merri bold",Roboto, "Helvetica Neue", sans-serif  !important;
+}
+.merri-reg{
+  font-family: "merri reg",Roboto, "Helvetica Neue", sans-serif  !important;
+}
+.bg-theme{
+    background-color: #52758B;
+}
+.bg-theme-light{
+  background-color: #f7f9fa !important;
+}
+.bg-yellow{
+  background-color: #FEBF3A !important;
+}
+.hover{
+  cursor: pointer;
+}
+.img-shadow{
+  box-shadow: 0 0 2rem #52758B;
+}
+.theme-color{
+    color: #52758B;
+}
+
+
+.theme-color2{
+    color: #FEBF3A;
+}
+.f-14{
+  font-size: 0.875rem;
+}
+.f-13{
+  font-size: 0.812rem;
+}
+.f-12{
+  font-size: 0.75rem;
+}
+.f-11{
+  font-size: 0.6875rem;
+}
+.f-10{
+  font-size: 0.625rem;
+}
+
+.f-15{
+  font-size: 0.9375rem;
+}
+.f-16{
+  font-size: 1rem;
+}
+.f-17{
+    font-size: 1.0625rem;
+}
+.f-18{
+  font-size: 1.125rem;
+}
+.f-19{
+  font-size: 19px;
+}
+.f-20{
+  font-size: 1.25rem;
+}
+.f-21{
+  font-size: 21px;
+}
+.f-22{
+  font-size: 22px;
+}
+.f-24{
+    font-size: 1.3rem;
+}
+.f-26{
+  font-size: 26px;
+}
+.f-28{
+  font-size: 28px;
+}
+.f-28{
+  font-size: 29px;
+}
+.f-30{
+    font-size: 30px;
+}
+.f-40{
+  font-size: 40px;
+}
+.w-80{
+  width: 80% !important;
+}
+.w-95{
+  width: 95% !important;
+}
+.shadow{
+  box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,.15) !important;
+}
+
+
+/* Scroll */
+/**** Scroll Bar*****/
+.hidden-scroll::-webkit-scrollbar
+{
+width: 0;
+background-color: #F7F7F7;
+}
+.scroll::-webkit-scrollbar-track
+{
+border-radius: 2px;
+}
+.scroll::-webkit-scrollbar
+{
+width: 8px;
+background-color: #F7F7F7;
+}
+.scroll::-webkit-scrollbar-thumb
+ {
+ border-radius: 10px;
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+ box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+ background-color: #52758B;
+ }
+  /* Loader css */
+/*  Absolute Center Spinner  */
+.app-loading {
+  position: fixed;
+  z-index: 999;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  }
+
+  /* Transparent Overlay */
+  .app-loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.5);
+  }
+
+  /* :not(:required) hides these rules from IE9 and below */
+  .app-loading:not(:required) {
+  /* hide "app-loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  }
+
+  .app-loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 50px;
+  height: 50px;
+  margin-top: -0.5em;
+  border: 5px solid #141313;
+  border-radius: 100%;
+  border-bottom-color: transparent;
+  -webkit-animation: spinner 1s linear 0s infinite;
+  animation: spinner 1s linear 0s infinite;
+  }
+
+
+  @-webkit-keyframes spinner {
+  0% {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  }
+  100% {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+  }
+  }
+  @-moz-keyframes spinner {
+  0% {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  }
+  100% {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+  }
+  }
+  @-o-keyframes spinner {
+  0% {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  }
+  100% {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+  }
+  }
+  @keyframes spinner {
+  0% {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  }
+  100% {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+  }
+  }
+  @keyframes spinner {
+    to {transform: rotate(360deg);}
+  }
+  .spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    border-top-color: #000000;
+    animation: spinner .8s linear infinite;
+  }
+ 

@@ -15,11 +15,17 @@ import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MainWrapperComponent } from './components/main-wrapper/main-wrapper.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainWrapperComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+.main-wrapper{
+    position: relative;
+   
+    height: auto;
+    background: #fff url('../../../assets/background.png')  no-repeat top center ;
+    background-size: 100% 100%;
+}
+button{
+    padding: 1rem;
+    margin-bottom: 2rem;
+}

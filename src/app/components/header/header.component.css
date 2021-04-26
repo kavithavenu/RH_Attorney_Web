@@ -1,0 +1,40 @@
+.extra-padding{
+    padding: 1.1rem !important;
+}
+.nav .nav-item{
+    float: left;
+    width: 2.6rem;
+    height: 2.1rem;
+    border-radius: 18%;
+    text-align: center;
+    line-height: 2.2rem;
+    margin: 0 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+/* .nav .nav-item:not(.active) .nav-link{
+    display: none;
+    opacity: 0;
+} */
+.nav .nav-item:hover , .nav .nav-item.active{
+    width: 6.9rem;
+    border-radius: 16px;
+    display: inline-block;
+    text-align: left !important;
+    background-color: rgba(82,117,139,0.2);
+    color: #52758b !important;
+}
+.nav .nav-item .icon:not(.active){
+    color: rgba(128, 128, 128, 0.678);
+    font-size: 1.2rem !important;
+}
+.nav .nav-item.active .icon , .nav .nav-item:hover .icon{
+    color: #52758b !important;
+    margin-left: 0.6rem;
+    font-size: 1.2rem !important;
+}
+.nav .nav-item:hover  .nav-link,  .nav .nav-item.active  .nav-link {
+    display: inline-block;
+    padding: 0 0.5rem !important;
+}
