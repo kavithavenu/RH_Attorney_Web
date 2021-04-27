@@ -18,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { MainWrapperComponent } from './components/main-wrapper/main-wrapper.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { FooterComponent } from './components/footer/footer.component';
     AppComponent,
     MainWrapperComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
