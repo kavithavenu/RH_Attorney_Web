@@ -21,6 +21,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { AttorneyMenuComponent } from './components/attorney-menu/attorney-menu.component';
+import { AttorneyProfileComponent } from './components/attorney-profile/attorney-profile.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     FooterComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    AttorneyMenuComponent,
+    AttorneyProfileComponent
   ],
   imports: [
     BrowserModule,

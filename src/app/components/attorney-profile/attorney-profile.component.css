@@ -1,0 +1,34 @@
+.rounded{
+    border-radius: 11px !important;
+}
+.shadow{
+  box-shadow: 0 0 5px rgba(19, 18, 18,.5) !important;
+}
+.timings .shadow{
+    margin-right: 0.7rem;
+}
+/* Ratings */
+.overall-star{
+    position: relative;
+    display: inline-block;
+    font-size: 1rem !important;
+    color: #e2e2e2;
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+}
+.star {
+    position: relative;
+    display: inline-block;
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    color: #e2e2e2;
+  }
+  .full {
+    color: #FEBF3A;
+  }
+  .half {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    color: #FEBF3A;
+  }
