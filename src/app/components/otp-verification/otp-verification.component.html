@@ -1,0 +1,29 @@
+<div class="text-center">
+    <div class="d-block"><span class="float-right hover text-right" (click)="closeModal()">
+      <img width="35" style="border-radius: 50%;" class="p-1"
+        src="../../../assets/cancel.png">
+    </span></div>
+</div>
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-10 p-2">
+            <div class="pb-3 pt-5 theme-color f-28 raleway-bold text-center">Verification</div>
+             <div class="raleway theme-color mb-4 text-center">Enter the verfication code.<br>
+                <span>we just sent to your phone.</span>
+            </div>
+            <div class="otp-container pt-4">
+                <ng-otp-input class="text-center py-3 pb-5" (onInputChange)="onOtpChange($event)"  [config]="{length:4}"></ng-otp-input>
+
+            </div>
+
+            <div class="raleway theme-color mb-3 pt-4 pb-3 f-15 text-center">If you didn't receive a code!
+                <span class="raleway-bold f-15"> Resend</span>
+            </div>
+
+            <div class="text-center mt-2">
+                <button mat-raised-button  class="rounded-pill raleway-bold w-100 py-1 my-4 bg-yellow mb-5 f-14" (click)="verify()">VERIFY</button>
+            </div>
+    </div>
+
+ </div>

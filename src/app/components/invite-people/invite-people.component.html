@@ -1,0 +1,53 @@
+<div>
+    <div class="bg-theme p-3">
+        <h5 class="text-center merri-bold f-18 text-white">
+            Invite People
+             <span class="float-right hover text-right" (click)="closeTab()">
+                <img width="50" style="border-radius: 50%; padding: 10px;" src="../../../assets/cancel.png">
+            </span></h5>
+    </div>
+    <div class="px-3 mt-4 mb-4" style="min-height: 50vh;">
+       <form [formGroup]="detailsForm" class="mb-4">
+           <div class="form-group mb-3">
+            <label class="merri-bold theme-color f-15">Invitation URL</label>
+            <input class="form-control border-theme" value=" https://xd.adobe.com/view/bf14d98e-0f1f-48a0-b56b-18d0df8f1ccd-ea47/">
+           </div>
+           <div class="d-flex">
+               <div class="input-container bg-theme-light">
+                <mat-form-field class="w-100 " appearance="fill">
+                    <mat-label class="merri-bold theme-color f-15">Name</mat-label>
+                    <input matInput   formControlName="name" class="f-14 merri-bold theme-color">
+                    <mat-error class="f-12">Enter Name...</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="w-100" appearance="fill">
+                    <mat-label class="merri-bold theme-color f-15">Email</mat-label>
+                    <input matInput    formControlName="email" class="f-14 merri-bold theme-color">
+                    <mat-error class="f-12">Enter Valid Email...</mat-error>
+                  </mat-form-field>
+               </div>
+               <div class="align-self-center ml-2 ">
+                   <img src="../../../assets/Add.png" alt="" (click)="addDetails()" class="hover">
+               </div>
+           </div>
+       </form>
+       <ng-container *ngIf="detailsArray.length"  >
+           <div *ngFor="let details of detailsArray; let i = index;" class="d-flex">
+            <div class="border-theme details flex-grow-1 rounded my-2 p-1" >
+                <ul class="list-unstyled pl-2">
+                    <li class="f-14 merri-bold theme-color mb-1">{{details.name}}</li>
+                    <li class="f-14 merri-bold theme-color">{{details.email}}</li>
+                </ul>
+               </div>
+               <img src="../../../assets/cancel.png" class="align-self-center px-1 hover ml-1" (click)="removeDetails(i)" width="32" >
+            </div>
+        </ng-container>
+        <div class="my-3 text-center" >
+            <button mat-raised-button (click)="closeTab()"  class=" rounded-pill opy-btn raleway-bold  text-center">
+                Cancel
+            </button>
+            <button mat-raised-button  (click)="submit()" [disabled]="!detailsArray.length" class=" rounded-pill px-4 mx-3 bg-yellow raleway-bold  text-center">
+                Share
+            </button>
+        </div>
+    </div>
+</div>

@@ -21,8 +21,22 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { UpdatePasswordComponent } from './components/update-password/update-password.component';
 
-
+// Social media login
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
+// Npm Packages
+import { NgOtpInputModule } from  'ng-otp-input';
+import { OtpVerificationComponent } from './components/otp-verification/otp-verification.component';
+import { HomeComponent } from './components/home/home.component';
+import { FetchMeetingsComponent } from './components/fetch-meetings/fetch-meetings.component';
+import { ClientProfileComponent } from './components/client-profile/client-profile.component';
+import { InvitePeopleComponent } from './components/invite-people/invite-people.component';
+import { AfterCallComponent } from './components/after-call/after-call.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,9 +45,15 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     FooterComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
-    
-  ],
+    ResetPasswordComponent,
+    UpdatePasswordComponent,
+    OtpVerificationComponent,
+    HomeComponent,
+    FetchMeetingsComponent,
+    ClientProfileComponent,
+    InvitePeopleComponent,
+    AfterCallComponent
+  ],entryComponents:[InvitePeopleComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -48,8 +68,28 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     MatSlideToggleModule,
     MatInputModule,
     NgbModule,
+    NgOtpInputModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '340242889123-4l9aae2ojho3o3fh5uerdf97vo3qki2s.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('clientId')
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

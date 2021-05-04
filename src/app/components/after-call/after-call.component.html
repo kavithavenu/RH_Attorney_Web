@@ -1,0 +1,29 @@
+<div class="wrapper d-flex justify-content-center" style="min-height: 70vh;">
+<div class="align-self-center" *ngIf="isLoading">
+    <div class="rotate text-center">
+        <img src="../../../assets/load.png" class="img-rotate" alt="">
+    </div>
+    <div class="text-center merri-bold  mt-5">
+        <div class="w-30 m-auto merri-bold f-19 theme-color">
+            Please do not navigate away from this screen, you will need to provide the consultation results
+        </div> 
+        
+    </div>
+</div>
+<div class="align-self-center" *ngIf="!isLoading">
+<ul class="list-unstyled star-rating">
+    <li class="mb-5 text-center">
+        <img src="../../../assets/icon_1.png" alt="" width="80">
+    </li>
+    <li class="theme-color merri-bold f-20 mb-5 text-center">
+        This meeting has ended
+    </li>
+    <li class="text-center mb-4">
+        <button mat-raised-button class="rounded-pill bg-yellow raleway-bold px-3">Send Fee Agreement</button>
+    </li>
+    <li class="text-center mt-2">
+        <button mat-raised-button class="rounded-pill theme-color raleway-bold bg-outline px-3">Send Non-Retention</button>
+    </li>
+</ul>
+</div>
+</div>
