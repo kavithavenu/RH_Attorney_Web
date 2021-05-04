@@ -23,6 +23,10 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { AttorneyMenuComponent } from './components/attorney-menu/attorney-menu.component';
 import { AttorneyProfileComponent } from './components/attorney-profile/attorney-profile.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
+import { TermsOfUseComponent } from './components/terms-of-use/terms-of-use.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { TechSupportComponent } from './components/tech-support/tech-support.component';
 
 
 @NgModule({
@@ -35,7 +39,11 @@ import { AttorneyProfileComponent } from './components/attorney-profile/attorney
     ForgotPasswordComponent,
     ResetPasswordComponent,
     AttorneyMenuComponent,
-    AttorneyProfileComponent
+    AttorneyProfileComponent,
+    NotificationsComponent,
+    TermsOfUseComponent,
+    PrivacyPolicyComponent,
+    TechSupportComponent
   ],
   imports: [
     BrowserModule,

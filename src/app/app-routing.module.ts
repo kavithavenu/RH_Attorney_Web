@@ -5,7 +5,11 @@ import { AttorneyProfileComponent } from './components/attorney-profile/attorney
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainWrapperComponent } from './components/main-wrapper/main-wrapper.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { TechSupportComponent } from './components/tech-support/tech-support.component';
+import { TermsOfUseComponent } from './components/terms-of-use/terms-of-use.component';
 
 const routes: Routes = [
   {path:"main",component:MainWrapperComponent},
@@ -14,11 +18,10 @@ const routes: Routes = [
   {path:"resetPassword",component:ResetPasswordComponent},
   {path:"attorneymenu",component:AttorneyMenuComponent,children:[
     {path:"profile",component:AttorneyProfileComponent},
-    // {path:"usernotifications",component:UserNotificationsComponent},
-    // {path:"termsofuse",component:TermsOfUseComponent},
-    // {path:"privacypolicy",component:PrivacyPolicyComponent},
-    // {path:"contactus",component:ContactUsComponent},
-    // {path:"techsupport",component:TechSupportComponent},
+    {path:"notifications",component:NotificationsComponent},
+    {path:"termsofuse",component:TermsOfUseComponent},
+    {path:"privacypolicy",component:PrivacyPolicyComponent},
+    {path:"techsupport",component:TechSupportComponent},
     {path:"",redirectTo:"profile",pathMatch:"full"}]
   },
   {path:"**",redirectTo:"main",pathMatch:"full"}
