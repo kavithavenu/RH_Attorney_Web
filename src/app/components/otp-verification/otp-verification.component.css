@@ -1,0 +1,10 @@
+::ng-deep .mat-dialog-container {
+    padding: 0 !important;
+  }
+::ng-deep  .otp-input{
+    border: none !important;
+    outline: none !important;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.5);
+    height: 3rem !important;
+    width: 3rem !important;
+}

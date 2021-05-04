@@ -1,0 +1,18 @@
+.border-yellow{
+    border-left: 4px solid #FEBF3A;
+}
+.bg-light-theme{
+    background-color: #e4e8ea;
+}
+.bg-theme-light{
+    background-color: #ebeff1 !important;
+}
+.hover-effect:hover{
+    background-color: #ffffff !important;
+}
+.col-md-12:hover{
+    cursor: pointer;
+}
+.border-white{
+    border: 2px solid #ffffff !important;
+}
