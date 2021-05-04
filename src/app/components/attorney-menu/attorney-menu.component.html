@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 p-0 ">
+        <div class="sidebar " style="padding: 30px 0.5rem">
+        <ul class="nav mt-2">
+          <li class="nav-item" [routerLink]="['/attorneymenu/profile']"  routerLinkActive="active">
+            <a class="nav-link  "
+               ><img class="sidebar-img" src="../../../assets/profile.png" >
+               Profile</a>
+          </li>
+          <li class="nav-item" [routerLink]="['/attorneymenu/usernotifications']" routerLinkActive="active">
+            <a class="nav-link raleway-medium "
+            ><img class="sidebar-img" src="../../../assets/notifications.png">
+            Notifications</a>
+          </li>
+          <li class="nav-item" [routerLink]="['/attorneymenu/termsofuse']" routerLinkActive="active">
+            <a class="nav-link raleway-medium "
+               ><img class="sidebar-img" src="../../../assets/file.png">Terms of Use</a>
+          </li>
+          <li class="nav-item" [routerLink]="['/attorneymenu/privacypolicy']" routerLinkActive="active">
+          <a class="nav-link raleway-medium "
+             ><img class="sidebar-img" src="../../../assets/file.png">Privacy Policy</a>
+          </li>
+          <li class="nav-item" [routerLink]="['/attorneymenu/contactus']" routerLinkActive="active">
+            <a class="nav-link raleway-medium "
+               ><img class="sidebar-img" src="../../../assets/phone_2.png">Contact Us</a>
+          </li>
+          <li class="nav-item" [routerLink]="['/attorneymenu/techsupport']" routerLinkActive="active">
+            <a class="nav-link raleway-medium "
+               ><img class="sidebar-img" src="../../../assets/support.png">Tech Support</a>
+          </li>
+          <li class="nav-item" [routerLink]="['/updatepassword']" routerLinkActive="active">
+            <a class="nav-link raleway-medium "
+               ><img class="sidebar-img" src="../../../assets/lock.png">Update Password</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active" (click)="openSignOutMethod(openSignOutModelContent)">
+            <a class="nav-link raleway-medium "
+               ><img class="sidebar-img" src="../../../assets/exit.png">Sign Out</a>
+          </li>
+        </ul>
+        </div>
+      </div>
+      <div class="col-md-10 p-0">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #openSignOutModelContent let-modal>
+    <div>
+      <div class="modal-header p-0" style="justify-content: flex-end;border: none;">
+          <img (click)="modal.close('Close click')" style="cursor: pointer;width: 2rem;padding: 10px 10px 0 0;"
+              src="../../../assets/cancel.png">
+      </div>
+        <div class="modal-body">
+            <div class="row" style="text-align: center;justify-content: center;">
+                <img style="width: 6rem;" src="../../../assets/log-out.png">
+            </div>
+            <div class="row" style="padding: 10px 0 0 0;text-align: center; justify-content: center;">
+              <div class="f-21 raleway-semibold" style="letter-spacing: 0px;
+              color: #1D1313;">Are you sure</div>
+            </div>
+          <div class="row" style="padding: 10px ;text-align: center; justify-content: center;">
+            <div class="f-21 raleway-semibold" style="letter-spacing: 0px;
+            color: #1D1313;">you want to sign out?</div>
+          </div>
+          <div class="row" style="padding: 30px 0;text-align: center; justify-content: center;">
+            <div class="btn btn-sm raleway-medium f-14 mr-3" style="box-shadow: 0px 3px 6px #00000029;border: 1px solid #52758B;
+            border-radius: 23px;width: 50px;height: 31px;" (click)="modal.close('Close click')">No</div>
+            <div class="btn btn-sm raleway-bold f-16" style="background: #FEBF3A 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 6px #00000029;border: 1px solid #FFFFFF;border-radius: 23px;height: 31px;padding: 3px 20px;" (click)="signOut()">Sign Out</div>
+          </div>
+        </div>
+    </div>
+  </ng-template>
+  

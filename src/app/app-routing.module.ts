@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AfterCallComponent } from './components/after-call/after-call.component';
 import { ClientProfileComponent } from './components/client-profile/client-profile.component';
 import { FetchMeetingsComponent } from './components/fetch-meetings/fetch-meetings.component';
+import { AttorneyMenuComponent } from './components/attorney-menu/attorney-menu.component';
+import { AttorneyProfileComponent } from './components/attorney-profile/attorney-profile.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -22,6 +24,15 @@ const routes: Routes = [
     {path:"client-profile",component:ClientProfileComponent},
     {path:"**",redirectTo:"fetch-meetings",pathMatch:"full"}
   ]},
+  {path:"attorneymenu",component:AttorneyMenuComponent,children:[
+    {path:"profile",component:AttorneyProfileComponent},
+    // {path:"usernotifications",component:UserNotificationsComponent},
+    // {path:"termsofuse",component:TermsOfUseComponent},
+    // {path:"privacypolicy",component:PrivacyPolicyComponent},
+    // {path:"contactus",component:ContactUsComponent},
+    // {path:"techsupport",component:TechSupportComponent},
+    {path:"",redirectTo:"profile",pathMatch:"full"}]
+  },
   {path:"**",redirectTo:"main",pathMatch:"full"}
 ];
 

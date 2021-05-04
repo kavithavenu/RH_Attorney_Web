@@ -22,6 +22,8 @@ import { LoginComponent } from './components/login/login.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { UpdatePasswordComponent } from './components/update-password/update-password.component';
+import { AttorneyMenuComponent } from './components/attorney-menu/attorney-menu.component';
+import { AttorneyProfileComponent } from './components/attorney-profile/attorney-profile.component';
 
 // Social media login
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
@@ -52,7 +54,9 @@ import { AfterCallComponent } from './components/after-call/after-call.component
     FetchMeetingsComponent,
     ClientProfileComponent,
     InvitePeopleComponent,
-    AfterCallComponent
+    AfterCallComponent,
+    AttorneyMenuComponent,
+    AttorneyProfileComponent
   ],entryComponents:[InvitePeopleComponent],
   imports: [
     BrowserModule,
