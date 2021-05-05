@@ -33,6 +33,6 @@
     color: #FEBF3A;
   }
 
-  ::ng-deep .modal.show .modal-dialog {
+  /* ::ng-deep .modal.show .modal-dialog {
       margin-top: 20vh !important;
-  }
+  } */

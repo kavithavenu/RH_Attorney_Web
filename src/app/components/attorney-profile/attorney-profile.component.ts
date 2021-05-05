@@ -49,7 +49,7 @@ export class AttorneyProfileComponent implements OnInit {
 
   openMessageMethod(openMessageModelContent){
     this.modalService.open(openMessageModelContent, { ariaLabelledBy: 'modal-basic-title', size: 'lg', 
-    backdrop: "static" }).result.then((result) => {
+    backdrop: "static",centered: true }).result.then((result) => {
       //,centered: true
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
