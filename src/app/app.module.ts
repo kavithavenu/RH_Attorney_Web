@@ -36,6 +36,7 @@ import {
   FacebookLoginProvider
 } from 'angularx-social-login';
 // Npm Packages
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgOtpInputModule } from  'ng-otp-input';
 import { OtpVerificationComponent } from './components/otp-verification/otp-verification.component';
 import { HomeComponent } from './components/home/home.component';
@@ -43,6 +44,7 @@ import { FetchMeetingsComponent } from './components/fetch-meetings/fetch-meetin
 import { ClientProfileComponent } from './components/client-profile/client-profile.component';
 import { InvitePeopleComponent } from './components/invite-people/invite-people.component';
 import { AfterCallComponent } from './components/after-call/after-call.component';
+import { ConsultationResultComponent } from './components/consultation-result/consultation-result.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +63,7 @@ import { AfterCallComponent } from './components/after-call/after-call.component
     AfterCallComponent,
     AttorneyMenuComponent,
     AttorneyProfileComponent,
+    ConsultationResultComponent,
     NotificationsComponent,
     TermsOfUseComponent,
     PrivacyPolicyComponent,
@@ -81,7 +84,8 @@ import { AfterCallComponent } from './components/after-call/after-call.component
     MatSlideToggleModule,
     MatInputModule,
     NgbModule,
-    NgOtpInputModule
+    NgOtpInputModule,
+    BsDatepickerModule.forRoot(),
   ],
   providers: [
     {
