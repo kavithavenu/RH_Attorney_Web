@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { MainWrapperComponent } from './components/main-wrapper/main-wrapper.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { UpdatePasswordComponent } from './components/update-password/update-password.component';
+import { ConsultationResultComponent } from './components/consultation-result/consultation-result.component';
 
 const routes: Routes = [
   {path:"main",component:MainWrapperComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:"home",component:HomeComponent,children:[
     {path:"fetch-meetings",component:FetchMeetingsComponent},
     {path:"client-profile",component:ClientProfileComponent},
+    {path:"consultation-result",component:ConsultationResultComponent},
     {path:"**",redirectTo:"fetch-meetings",pathMatch:"full"}
   ]},
   {path:"attorneymenu",component:AttorneyMenuComponent,children:[
