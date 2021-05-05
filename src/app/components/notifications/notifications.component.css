@@ -1,0 +1,44 @@
+.bg-light-theme{
+    background-color: #e4e8ea;
+  }
+  
+  .notify-row{
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #dee4e8;
+    border-radius: 10px;
+    outline-style: none;
+    cursor: pointer;
+  }
+  .notify-row:hover {
+    background: #8CB8CA 0% 0% no-repeat padding-box;
+    color: #ffffff;
+    border: transparent;
+  }
+  .notify-row:hover .notification-img{
+    background: url("../../../assets/RobinsonandHenry_Square_White_Logo.png") no-repeat center center;
+  background-size: cover;
+  }
+  
+  .notify-row:hover .notification-img-1{
+    /* background: url("../../../assets/clock_2.png") no-repeat center center; */
+    background-size: cover;
+  }
+  /* .highlighted {
+    background: #8CB8CA 0% 0% no-repeat padding-box;
+    color: #ffffff;
+  } */
+  .notification-img{
+    background: url("../../../assets/RobinsonandHenry_Square_DarkBlue_Logo.png") no-repeat center center;
+    width: 40px;
+    height: 40px;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+  .notification-img-1{
+    /* background: url("../../../assets/clock_1.png") no-repeat center center; */
+    /*width: 40px;*/
+    /*height: 40px;*/
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+  

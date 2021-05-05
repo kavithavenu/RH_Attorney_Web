@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row mt-3">
+      <div class="col-md-11 border-yellow p-1 theme-color raleway-semibold bg-light-theme">
+        <span class="container px-4">Notifications</span>
+      </div>
+    </div>
+    <div class="" style="padding:  20px 0 20px 10px">
+      <div *ngFor="let notificationData of notifications;let i = index" style="margin: 5px -10px 5px 5px"
+      (mouseenter) ="mouseEnter(i) "  (mouseleave) ="mouseLeave(i)">
+    
+        <div class="col-md-11 notify-row d-flex" style="padding:10px" [ngClass]="{'highlighted': notificationData.id === selectedRow  }"
+             (click)="selectNotificationFromList(notificationData)">
+          <div style="align-self: center;padding:5px 18px 5px 5px;">
+            <div class="notification-img"></div>
+          </div>
+          <div style="align-self: center" class="f-15 raleway-bold">
+            <div class="f-13">{{notificationData.content}}</div>
+          </div>
+          <div style="align-self: flex-end" >
+            <div class="notification-img-1"></div>
+            <div class="f-10" style="white-space: nowrap">
+              <img src="../../../assets/clock_2.png" *ngIf="hoveredElement == i">
+          <img src="../../../assets/clock_1.png" *ngIf="hoveredElement != i">
+              {{notificationData.time | date:"hh:mm aa"}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    

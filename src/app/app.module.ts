@@ -24,6 +24,10 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { UpdatePasswordComponent } from './components/update-password/update-password.component';
 import { AttorneyMenuComponent } from './components/attorney-menu/attorney-menu.component';
 import { AttorneyProfileComponent } from './components/attorney-profile/attorney-profile.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
+import { TermsOfUseComponent } from './components/terms-of-use/terms-of-use.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { TechSupportComponent } from './components/tech-support/tech-support.component';
 
 // Social media login
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
@@ -59,8 +63,13 @@ import { ConsultationResultComponent } from './components/consultation-result/co
     AfterCallComponent,
     AttorneyMenuComponent,
     AttorneyProfileComponent,
-    ConsultationResultComponent
-  ],entryComponents:[InvitePeopleComponent],
+    ConsultationResultComponent,
+    NotificationsComponent,
+    TermsOfUseComponent,
+    PrivacyPolicyComponent,
+    TechSupportComponent
+  ],
+    entryComponents:[InvitePeopleComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
