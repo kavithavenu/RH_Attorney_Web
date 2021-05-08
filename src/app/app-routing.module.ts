@@ -16,6 +16,7 @@ import { TechSupportComponent } from './components/tech-support/tech-support.com
 import { TermsOfUseComponent } from './components/terms-of-use/terms-of-use.component';
 import { UpdatePasswordComponent } from './components/update-password/update-password.component';
 import { ConsultationResultComponent } from './components/consultation-result/consultation-result.component';
+import { JoinTheCallComponent } from './components/join-the-call/join-the-call.component';
 
 const routes: Routes = [
   {path:"main",component:MainWrapperComponent},
@@ -38,6 +39,7 @@ const routes: Routes = [
     {path:"techsupport",component:TechSupportComponent},
     {path:"",redirectTo:"profile",pathMatch:"full"}]
   },
+  {path:"jointhecall",component:JoinTheCallComponent},
   {path:"**",redirectTo:"main",pathMatch:"full"}
 ];
 

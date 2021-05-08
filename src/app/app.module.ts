@@ -45,6 +45,7 @@ import { ClientProfileComponent } from './components/client-profile/client-profi
 import { InvitePeopleComponent } from './components/invite-people/invite-people.component';
 import { AfterCallComponent } from './components/after-call/after-call.component';
 import { ConsultationResultComponent } from './components/consultation-result/consultation-result.component';
+import { JoinTheCallComponent } from './components/join-the-call/join-the-call.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +68,8 @@ import { ConsultationResultComponent } from './components/consultation-result/co
     NotificationsComponent,
     TermsOfUseComponent,
     PrivacyPolicyComponent,
-    TechSupportComponent
+    TechSupportComponent,
+    JoinTheCallComponent
   ],
     entryComponents:[InvitePeopleComponent],
   imports: [
