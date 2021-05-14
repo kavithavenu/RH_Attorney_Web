@@ -11,6 +11,9 @@ export class ConsultationResultComponent implements OnInit {
   selectedRow: any;
   sendMessageForm:FormGroup;
   openConsultationNotes:boolean = false;
+  pageIndex:number = 0;
+  paymentOtions:Array<any> = [1,2,3,4,5,6]
+  showDescInput:boolean = false;
     matterDescriptionsList:any = [
     {
       "id":"1",
@@ -35,6 +38,10 @@ export class ConsultationResultComponent implements OnInit {
     {
       "id":"6",
       "data":"matter description six data"
+    },
+    {
+      "id":"7",
+      "data":"Other"
     }
   ]
     
@@ -48,20 +55,11 @@ export class ConsultationResultComponent implements OnInit {
 
   selectedDesc(value: any) {
     console.log(value);
-    let index = -1;
-    index = this.matterDescriptionsList.findIndex((val) => {
-      return (
-        val.id ===
-        value.id
-      );
-    });
-    if (index != -1) {
-      let obj = this.matterDescriptionsList[index];
-      console.log("index val...", obj)
-      this.selectedRow = this.matterDescriptionsList[index].id;
-      console.log("obj", obj);
-      //console.log("addTestDateDetails...", this.addTestDateDetails.value)
-      //this.modalService.dismissAll()
+    this.selectedRow = value.id;
+    if(value.data == "Other"){
+      this.showDescInput = true;
+    }else{
+      this.showDescInput = false;
     }
   }
 

@@ -7,3 +7,6 @@
     background: #8CB8CA 0% 0% no-repeat padding-box;
     color: #ffffff !important;
   }
+  .borde-bottom-theme{
+    border-bottom: 1px solid #52758B;
+  }
