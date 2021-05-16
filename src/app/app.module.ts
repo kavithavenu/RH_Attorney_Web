@@ -23,6 +23,11 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { AttorneyMenuComponent } from './components/attorney-menu/attorney-menu.component';
 import { AttorneyProfileComponent } from './components/attorney-profile/attorney-profile.component';
+import { ConsultationResultsComponent } from './components/consultation-results/consultation-results.component';
+import { ClientssortComponent } from './components/clientssort/clientssort.component';
+import { ClientscheduleComponent } from './components/clientschedule/clientschedule.component';
+import { OpenclientmatterComponent } from './components/openclientmatter/openclientmatter.component';
+import { ClientspopupComponent } from './components/clientspopup/clientspopup.component';
 
 
 @NgModule({
@@ -35,7 +40,12 @@ import { AttorneyProfileComponent } from './components/attorney-profile/attorney
     ForgotPasswordComponent,
     ResetPasswordComponent,
     AttorneyMenuComponent,
-    AttorneyProfileComponent
+    AttorneyProfileComponent,
+    ConsultationResultsComponent,
+    ClientssortComponent,
+    ClientscheduleComponent,
+    OpenclientmatterComponent,
+    ClientspopupComponent
   ],
   imports: [
     BrowserModule,
