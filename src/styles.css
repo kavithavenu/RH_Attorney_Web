@@ -96,7 +96,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: #52758B;
 }
 .bg-theme-light{
-  background-color: #f7f9fa !important;
+  background-color: #edf1f3 !important;
 }
 .bg-yellow{
   background-color: #FEBF3A !important;
@@ -183,7 +183,58 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,.15) !important;
 }
 
+/* BS Datepicker */
+.bs-datepicker{
+  box-shadow: none;
+}
+.bs-datepicker-container {
+  padding: 0;
+  font-family: "proxi regular" !important;
+}
 
+.border-outline{
+  color: #707070;
+}
+bs-days-calendar-view{
+  min-width: 22rem;
+  padding: 1rem;
+  background-color: #FAFAFA;
+  box-shadow: none !important;
+}
+bs-month-calendar-view{
+  min-width: 22rem;
+  padding: 1rem;
+  background-color: #fafafa;
+}
+bs-years-calendar-view{
+  min-width: 22rem;
+  padding: 1rem;
+  background-color: #fafafa;
+}
+.theme-green .bs-datepicker-head , .bs-datepicker-body{
+  background-color: #fafafa !important;
+  color: #52758B !important;
+    border: none;
+}
+.bs-datepicker-body{
+  font-family: "proxi regular",Roboto, "Helvetica Neue", sans-serif  !important;
+}
+.bs-datepicker-head{
+  font-family: "merri bold",Roboto, "Helvetica Neue", sans-serif  !important;
+
+}
+.theme-green .bs-datepicker-body table td span.selected{
+  background-color: #52758B;
+}
+.bs-datepicker-head button.previous , .bs-datepicker-head button.next{
+  color: #FEBF3A;
+}
+.bs-datepicker-head button.current{
+  color: #52758B;
+}
+.bs-datepicker-body table td span.is-other-month{
+  display: none;
+}
 /* Scroll */
 /**** Scroll Bar*****/
 .hidden-scroll::-webkit-scrollbar

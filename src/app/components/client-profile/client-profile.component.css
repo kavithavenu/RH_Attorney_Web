@@ -1,0 +1,40 @@
+.side-details{
+    min-height: 80vh;
+}
+.opy-btn{
+    border: 1px solid #52758B;
+    color: #52758B;
+    min-width: 13rem;
+    margin-bottom: 1rem;
+}
+.opy-btn:hover , .active{
+    background-color: #FEBF3A;
+    border: none;
+    color: #000000;
+}
+.profile-img{
+    border: 2px solid #52758B !important;
+}
+.share-icon{
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translate(-50%,0)
+}
+.heading{
+    background-color: #dce3e8;
+    padding: 1rem;
+    max-width: 25rem;
+}
+.para{
+    color: #606060;
+    margin: 1rem 0;
+}
+.img-rotate{
+    animation: spin 6s infinite linear;
+  }
+  @keyframes spin {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+
+}

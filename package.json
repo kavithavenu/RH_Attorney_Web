@@ -24,6 +24,8 @@
     "@ng-bootstrap/ng-bootstrap": "^9.0.2",
     "angularx-social-login": "^3.5.4",
     "bootstrap": "^4.6.0",
+    "ng-otp-input": "^1.7.1",
+    "ngx-bootstrap": "^6.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

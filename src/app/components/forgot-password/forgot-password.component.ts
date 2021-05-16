@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { OtpVerificationComponent } from '../otp-verification/otp-verification.component';
 
 @Component({
   selector: 'app-forgot-password',
@@ -29,16 +30,16 @@ export class ForgotPasswordComponent implements OnInit {
     this.router.navigateByUrl('/resetPassword')
   }
   submit(){
-    // let dailogRef = this.dailog.open(OtpVerficationComponent,{
-    //   panelClass: 'col-md-4',
-    //   hasBackdrop:true,
-    //   disableClose : true
-    // });
-    // dailogRef.afterClosed().subscribe(val=>{
-    //   if(val){
-    //     this.resetPage()
-    //   }
-    // })
+    let dailogRef = this.dailog.open(OtpVerificationComponent,{
+      panelClass: 'col-md-4',
+      hasBackdrop:true,
+      disableClose : true
+    });
+    dailogRef.afterClosed().subscribe(val=>{
+      if(val){
+        this.resetPage()
+      }
+    })
 
     this.resetPage()
   }

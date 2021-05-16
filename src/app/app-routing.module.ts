@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AfterCallComponent } from './components/after-call/after-call.component';
+import { ClientProfileComponent } from './components/client-profile/client-profile.component';
+import { FetchMeetingsComponent } from './components/fetch-meetings/fetch-meetings.component';
 import { AttorneyMenuComponent } from './components/attorney-menu/attorney-menu.component';
 import { AttorneyProfileComponent } from './components/attorney-profile/attorney-profile.component';
 import { ClientscheduleComponent } from './components/clientschedule/clientschedule.component';
@@ -7,10 +10,18 @@ import { ClientspopupComponent } from './components/clientspopup/clientspopup.co
 import { ClientssortComponent } from './components/clientssort/clientssort.component';
 import { ConsultationResultsComponent } from './components/consultation-results/consultation-results.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainWrapperComponent } from './components/main-wrapper/main-wrapper.component';
 import { OpenclientmatterComponent } from './components/openclientmatter/openclientmatter.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { TechSupportComponent } from './components/tech-support/tech-support.component';
+import { TermsOfUseComponent } from './components/terms-of-use/terms-of-use.component';
+import { UpdatePasswordComponent } from './components/update-password/update-password.component';
+import { ConsultationResultComponent } from './components/consultation-result/consultation-result.component';
+import { JoinTheCallComponent } from './components/join-the-call/join-the-call.component';
 
 const routes: Routes = [
   {path:"main",component:MainWrapperComponent},
@@ -22,15 +33,23 @@ const routes: Routes = [
   {path:"openclientmatter",component:OpenclientmatterComponent},
   {path:"clientspopoup",component:ClientspopupComponent},
   {path:"consultationresults",component:ConsultationResultsComponent},
+  {path:"updatepassword",component:UpdatePasswordComponent},
+  {path:"after-call",component:AfterCallComponent},
+  {path:"home",component:HomeComponent,children:[
+    {path:"fetch-meetings",component:FetchMeetingsComponent},
+    {path:"client-profile",component:ClientProfileComponent},
+    {path:"consultation-result",component:ConsultationResultComponent},
+    {path:"**",redirectTo:"fetch-meetings",pathMatch:"full"}
+  ]},
   {path:"attorneymenu",component:AttorneyMenuComponent,children:[
     {path:"profile",component:AttorneyProfileComponent},
-    // {path:"usernotifications",component:UserNotificationsComponent},
-    // {path:"termsofuse",component:TermsOfUseComponent},
-    // {path:"privacypolicy",component:PrivacyPolicyComponent},
-    // {path:"contactus",component:ContactUsComponent},
-    // {path:"techsupport",component:TechSupportComponent},
+    {path:"notifications",component:NotificationsComponent},
+    {path:"termsofuse",component:TermsOfUseComponent},
+    {path:"privacypolicy",component:PrivacyPolicyComponent},
+    {path:"techsupport",component:TechSupportComponent},
     {path:"",redirectTo:"profile",pathMatch:"full"}]
   },
+  {path:"jointhecall",component:JoinTheCallComponent},
   {path:"**",redirectTo:"main",pathMatch:"full"}
 ];
 

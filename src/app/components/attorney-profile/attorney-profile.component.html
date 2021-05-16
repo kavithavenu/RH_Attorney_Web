@@ -16,7 +16,11 @@
                             REAL ESTATE, LITIGATION & PROBATE
                         </li>
                     </ul>                    
-                </div>                
+                </div>      
+                <div style="margin: auto;
+                margin-right: 30px;">
+                    <img src="../../../assets/edit.png" style="width: 1.3rem;" (click)="openMessageMethod(openMessageModelContent)">
+                </div>          
             </div>
         </div>
     </div>
@@ -33,17 +37,17 @@
                 <div class="mt-3 proxi-reg ">
                     Donald “Corky” Eby is a partner at Robinson & Henry, as well as the lead attorney for the firm’s civil litigation and real estate practices.
                 </div>
-                <div class="mt-3 proxi-reg">
+                <div class="mt-3 proxi-reg" style="text-align: justify;">
                     As a previous real estate company owner and operator, Don has firsthand experience dealing with landlord/tenant issues. Stemming from this background,
                     Don is an experienced adviser and powerful advocate for clients facing any real estate challenge. 
                     He helps clients with the purchase or sale of commercial/residential property; real estate financing issues; 
                     land development or zoning problems; lease drafting or enforcement; landlord/tenant disputes or eviction; 
                     foreclosures; and HOA disputes.
                 </div>
-                <div class="mt-3 proxi-reg">
+                <div class="mt-3 proxi-reg" style="text-align: justify;">
                     Don is also a talented legal resource in the area of business and commercial law. He can provide guidance in issues involving acquisitions and mergers, joint ventures, entity formation, collections, franchises, and contract issues. For many of his small business clients, he also serves as general corporate council.
                 </div>
-                <div class="mt-3 proxi-reg">
+                <div class="mt-3 proxi-reg" style="text-align: justify;">
                     Don provides superior representation for all of his clients, but our nation’s veterans hold a special place in his heart. Don served in the U.S. Navy where he was assigned to aviation squadrons, aircraft carriers, and other special assignments. Today, he is proud to represent veterans on issues such as VA disability ratings, combat-related special compensation, discharge review, and other Veterans Administration claims.
                 </div>
             </div>
@@ -111,7 +115,7 @@
                           </ng-template>
                           </ngb-rating>
                     </p>
-                    <p class="proxi-reg f-12 mb-0">
+                    <p class="proxi-reg f-12 mb-0" style="text-align: justify;">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
                     </p>
                     <div class="raleway-semibold f-11 text-light">
@@ -129,3 +133,34 @@
         </div>
     </div>
 </div>
+
+<ng-template #openMessageModelContent let-modal>
+    <div>
+      <div class="modal-header p-0" style="justify-content: flex-end;border: none;">
+       
+          <img (click)="modal.close('Close click')" style="cursor: pointer;width: 2rem;padding: 10px 10px 0 0;"
+              src="../../../assets/cancel.png">
+      </div>
+        <div class="modal-body" style="padding: 40px;" >
+            <div class="raleway-bold f-17 theme-color" style="text-align: start;padding: 10px 0px;">
+                Message to R&H Marketing Department
+            </div>
+            <div>
+                <form [formGroup]="sendMessageForm" >
+                    <textarea formControlName="typedMessage" class="proxi-reg f-15" style="width: 100%;border: 1px solid #707070;letter-spacing: 0px;
+                    color: #0F1010;text-align: left;outline: none;height: 15vh;padding: 7px;">
+
+                    </textarea>
+                </form>
+            </div>
+            <div style="text-align: end;padding: 40px;">
+                <button class="btn btn-sm raleway-bold f-17" style="background: #FEBF3A;background: #FEBF3A;
+                padding: 5px 40px;
+                box-shadow: 0px 3px 6px #00000029;
+                border: 1px solid #FFFFFF;
+                border-radius: 26px;" (click)="sendMessage()">Send to R&H</button>
+            </div>
+          
+        </div>
+    </div>
+</ng-template>

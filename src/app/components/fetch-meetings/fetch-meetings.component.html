@@ -1,0 +1,58 @@
+<div class="position-relative bg-theme-light p-2 mt-2">
+    <div class=" theme-color  f-17 raleway-bold px-3">
+        All Attorneys
+    </div>
+    <div class="position-absolute"  style="right: 4rem; top: 0;">
+        <img src="../../../assets/siren.png" width="30">
+    </div>
+   </div>
+   <div class="container-fluid">
+       <div class="row" *ngFor="let user of consultationsArray;">
+        <div class="col-md-12 p-4 d-flex bg-light hover-effect border-bottom " >
+            <div class="px-3">
+                <img src="{{user.image}}" class="rounded-circle shadow border-white" width="70">
+            </div>
+            <div class="align-self-center">
+                <ul class="list-unstyled mb-0">
+                    <li class="f-18 merri theme-color">
+                        {{user.name}}
+                    </li>
+                    <li class="merri-reg f-15" style="max-width: 700px; color: #FF0505;">
+                       {{user.caption}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+       </div>
+   </div>
+   <div class="d-flex justify-content-between bg-theme-light p-2 mt-2">
+    <div class=" theme-color  f-17 raleway-bold px-3">
+        Today’s Meetings (4)
+    </div>
+    <div class="px-3">
+        <span class="theme-color merri-reg f-15">8th Feb, 2021</span>
+    </div>
+   </div>
+   <div class="container-fluid ">
+    <div class="row" *ngFor="let meeting of meetings;">
+        <div class="col-md-12 p-4 d-flex bg-light hover-effect border-bottom position-relative" >
+            <div class="px-3">
+                <img src="{{meeting.image}}" class="rounded-circle shadow border-white" width="70">
+            </div>
+            <div class="align-self-center">
+                <ul class="list-unstyled mb-0">
+                    <li class="f-18 merri theme-color">
+                        {{meeting.name}}
+                    </li>
+                    <li class="merri-reg f-15 theme-color" style="max-width: 700px;">
+                       {{meeting.caption}}
+                    </li>
+                    <li class="merri-reg f-15 theme-color" style="max-width: 700px;">
+                      <img src="../../../assets/clock.png" alt="" width="10" class="mr-1">  {{meeting.time}}
+                     </li>
+                </ul>
+            </div>
+            <button mat-raised-button *ngIf="meeting.isWaiting" class="position-absolute rounded-pill bg-theme text-white" style="right: 2rem;top: 2rem;">Attendee is waiting</button>
+        </div>
+       </div>
+   </div>
