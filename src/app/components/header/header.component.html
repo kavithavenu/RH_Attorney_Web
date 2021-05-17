@@ -7,23 +7,19 @@
         <img src="../../../assets/menu.png" width="25" height="20" [routerLink]="['/attorneymenu/profile']" style="cursor: pointer;">
         
     </div>
-        <!-- <ul class="list-unstyled nav" *ngIf="isLoggedIn">
-            <li class="nav-item"  [ngClass]="{'active':routerEndPoint == 'home'}" (click)="openQuiryModal()">
+        <ul class="list-unstyled nav" *ngIf="isLoggedIn">
+            <li class="nav-item"  [ngClass]="{'active':routerEndPoint == 'home'}" (click)="toHomePage()">
         <span class="icon">
             <i class="fas fa-home"></i>
         </span> <span class="nav-link merri-reg f-13">Home</span>
             </li>
-            <li class="nav-item"  [ngClass]="{'active':routerEndPoint == 'calenderData'}" (click)="calenderPage()">
+            <li class="nav-item"  [ngClass]="{'active':routerEndPoint == 'clients'}" (click)="clients()">
     <span class="icon">
-        <i class="fas fa-calendar-alt"></i>
-    </span> <span class="nav-link merri-reg f-13">Calender</span>
+        <i class="fas fa-users"></i>
+    </span> <span class="nav-link merri-reg f-13">Clients</span>
             </li>
-            <li class="nav-item" [ngClass]="{'active':routerEndPoint == 'mycase'}"  (mouseenter) ="mouseEnter() "   (click)="myCasePage()">
-    <span class="icon">
-        <img [src]="imgSrc" width="19">
-    </span> <span class="nav-link merri-reg f-13">My Cases</span>
-            </li>
-        </ul> -->
+          
+        </ul>
     </div>
     <div class="d-flex align-self-center mr-2" *ngIf="!isLoggedIn">
         <span class=" theme-color align-self-center px-1 raleway-bold f-15 hover" 
