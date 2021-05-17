@@ -5,10 +5,15 @@ import { ClientProfileComponent } from './components/client-profile/client-profi
 import { FetchMeetingsComponent } from './components/fetch-meetings/fetch-meetings.component';
 import { AttorneyMenuComponent } from './components/attorney-menu/attorney-menu.component';
 import { AttorneyProfileComponent } from './components/attorney-profile/attorney-profile.component';
+import { ClientscheduleComponent } from './components/clientschedule/clientschedule.component';
+import { ClientspopupComponent } from './components/clientspopup/clientspopup.component';
+import { ClientssortComponent } from './components/clientssort/clientssort.component';
+import { ConsultationResultsComponent } from './components/consultation-results/consultation-results.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainWrapperComponent } from './components/main-wrapper/main-wrapper.component';
+import { OpenclientmatterComponent } from './components/openclientmatter/openclientmatter.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
@@ -23,6 +28,11 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"forgotPassword",component:ForgotPasswordComponent},
   {path:"resetPassword",component:ResetPasswordComponent},
+  {path:"clientsort",component:ClientssortComponent},
+  {path:"clientschedule",component:ClientscheduleComponent},
+  {path:"openclientmatter",component:OpenclientmatterComponent},
+  {path:"clientspopoup",component:ClientspopupComponent},
+  {path:"consultationresults",component:ConsultationResultsComponent},
   {path:"updatepassword",component:UpdatePasswordComponent},
   {path:"after-call",component:AfterCallComponent},
   {path:"home",component:HomeComponent,children:[

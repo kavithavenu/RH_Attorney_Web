@@ -24,6 +24,10 @@ export class HeaderComponent implements OnInit {
     this.routerEndPoint = "home";
 
   }
+
+  consultationPage(){
+    this.router.navigateByUrl('/consultationresults')
+  }
   isNotLoginPages():Boolean{
     if ((this.router.url != '/') && (this.router.url != '/login') && (this.router.url != '/register')&& (this.router.url != '/forgotPassword')
     &&  (this.router.url != '/resetPassword') && (this.router.url != '/updatepassword') && (this.router.url !='/after-call') && (this.router.url !='/jointhecall') ) {

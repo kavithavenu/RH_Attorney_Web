@@ -1,0 +1,80 @@
+ <div class="mt-3">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb container-fluid merri-bold theme-color px-4 m-0 ">
+          <li class="breadcrumb-item p-2" aria-current="page">
+
+            <img class="text-center" src="../../../assets/ic_back.png">
+            <span class="hover raleway-bold f-22 ml-3   theme-color" [routerLink]="['/home']"> Consultation Results </span>   </li>
+        </ol>
+      </nav>
+</div>
+
+  
+<div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-12 p-0 ">
+        <div>
+            <div class="col-md-12 d-flex p-0">
+   
+                <div class="sidebar col-md-4 vh-100">
+                    
+                    <div class="merri-reg f-19  text-center  mt-5" style="color: red;">2 Days Over due</div>
+        
+                    <ul class="list-unstyled">
+                        <li class="merri-reg f-18 theme-color text-center mt-4">Estate Planning in Office Consult</li>
+                        <li>
+                            <div class="f-17 raleway pt-2 pl-3 text-center mt-1 "> 
+                                <img src="../../../assets/calendar_1.png"> 
+                                <span class=" raleway-semibold f-17 theme-color ml-2 text-center">9:30 AM</span><span
+                                    class=" raleway-semibold f-17 theme-color pl-3"> Nov 18, 2020 </span>
+                            </div>
+                        </li>
+                        <li >
+        
+                        <div *ngFor="let legalTeam of members" class="text-center mt-5">
+                            <img src="{{legalTeam.img}}" class="position-relative rounded-circle " height="100px" width="100px">
+                            <ul class="list-unstyled">
+                                <li class="merri-reg f-17 theme-color mt-3">{{legalTeam.name}}</li>
+                                <li class="proxi-reg  f-15">{{legalTeam.post}}</li>
+                                <li class="proxi-reg f-15">{{legalTeam.text}}</li>
+                            </ul>
+                        </div>
+                        </li>
+                    </ul>
+        
+                </div>
+
+                <div class="col-md-8">
+                    <div class="row mt-5" style="padding: 70px 0;text-align: center;justify-content: center;">
+                      <div>
+                        <div class=" m-0">
+                            <button mat-raised-button type="button"  class="rounded-pill bg-yellow f-19 raleway-bold w-100 mb-1 mt-5 py-1 px-4"(click)="clientSortPage()" style="justify-content: center;"  >Send Fee Agreement </button> 
+                            
+                        </div>
+                        <div >
+                            <button mat-raised-button type="button"   class="rounded-pill  theme-color raleway-bold w-100 mt-3  f-19 py-1"  (click)="clientschedulePage()" style="justify-content: center; border: 1px solid #52758B;"  >Send Non-Retention </button> 
+
+                        </div>
+                        
+                
+                      </div>
+                    </div>
+                  </div>
+        
+                <!-- <div class=" col-md-8">
+                    
+                  
+                      <div class=" row col-md-4 " style="text-align: center; justify-content: center;">
+                      <button mat-raised-button type="button"  class="rounded-pill bg-yellow raleway-bold w-100  py-1"(click)="clientSortPage()" style="justify-content: center;"  >Send Fee Agreement </button> 
+                      <button mat-raised-button type="button"  class="rounded-pill  raleway-bold w-100  py-1 mt-2"  >Send Non-Retention </button> 
+        
+                  </div>
+                </div> -->
+            
+            </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>

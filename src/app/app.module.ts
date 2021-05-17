@@ -24,6 +24,11 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { UpdatePasswordComponent } from './components/update-password/update-password.component';
 import { AttorneyMenuComponent } from './components/attorney-menu/attorney-menu.component';
 import { AttorneyProfileComponent } from './components/attorney-profile/attorney-profile.component';
+import { ConsultationResultsComponent } from './components/consultation-results/consultation-results.component';
+import { ClientssortComponent } from './components/clientssort/clientssort.component';
+import { ClientscheduleComponent } from './components/clientschedule/clientschedule.component';
+import { OpenclientmatterComponent } from './components/openclientmatter/openclientmatter.component';
+import { ClientspopupComponent } from './components/clientspopup/clientspopup.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { TermsOfUseComponent } from './components/terms-of-use/terms-of-use.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
@@ -64,6 +69,11 @@ import { JoinTheCallComponent } from './components/join-the-call/join-the-call.c
     AfterCallComponent,
     AttorneyMenuComponent,
     AttorneyProfileComponent,
+    ConsultationResultsComponent,
+    ClientssortComponent,
+    ClientscheduleComponent,
+    OpenclientmatterComponent,
+    ClientspopupComponent,
     ConsultationResultComponent,
     NotificationsComponent,
     TermsOfUseComponent,
