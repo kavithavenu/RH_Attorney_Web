@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fetch-meetings',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class FetchMeetingsComponent implements OnInit {
   consultationsArray:Array<any> = [];
   meetings:Array<any> =[];
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     this.consultationsArray = [
@@ -54,5 +55,7 @@ export class FetchMeetingsComponent implements OnInit {
       }
     ]
   }
-
+  clientProfilePage(){
+    
+  }
 }

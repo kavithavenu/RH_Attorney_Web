@@ -35,7 +35,7 @@
    </div>
    <div class="container-fluid ">
     <div class="row" *ngFor="let meeting of meetings;">
-        <div class="col-md-12 p-4 d-flex bg-light hover-effect border-bottom position-relative" >
+        <div class="col-md-12 p-4 d-flex bg-light hover-effect border-bottom position-relative" (click)="clientProfilePage()">
             <div class="px-3">
                 <img src="{{meeting.image}}" class="rounded-circle shadow border-white" width="70">
             </div>

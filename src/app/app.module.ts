@@ -51,6 +51,8 @@ import { InvitePeopleComponent } from './components/invite-people/invite-people.
 import { AfterCallComponent } from './components/after-call/after-call.component';
 import { ConsultationResultComponent } from './components/consultation-result/consultation-result.component';
 import { JoinTheCallComponent } from './components/join-the-call/join-the-call.component';
+import { ClientsComponent } from './components/clients/clients.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +81,9 @@ import { JoinTheCallComponent } from './components/join-the-call/join-the-call.c
     TermsOfUseComponent,
     PrivacyPolicyComponent,
     TechSupportComponent,
-    JoinTheCallComponent
+    JoinTheCallComponent,
+    ClientsComponent,
+    ScheduleComponent
   ],
     entryComponents:[InvitePeopleComponent],
   imports: [

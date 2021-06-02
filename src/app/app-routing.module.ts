@@ -22,24 +22,32 @@ import { TermsOfUseComponent } from './components/terms-of-use/terms-of-use.comp
 import { UpdatePasswordComponent } from './components/update-password/update-password.component';
 import { ConsultationResultComponent } from './components/consultation-result/consultation-result.component';
 import { JoinTheCallComponent } from './components/join-the-call/join-the-call.component';
+import { ClientsComponent } from './components/clients/clients.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
 
 const routes: Routes = [
   {path:"main",component:MainWrapperComponent},
   {path:"login",component:LoginComponent},
   {path:"forgotPassword",component:ForgotPasswordComponent},
   {path:"resetPassword",component:ResetPasswordComponent},
-  {path:"clientsort",component:ClientssortComponent},
-  {path:"clientschedule",component:ClientscheduleComponent},
-  {path:"openclientmatter",component:OpenclientmatterComponent},
+
+
   {path:"clientspopoup",component:ClientspopupComponent},
-  {path:"consultationresults",component:ConsultationResultsComponent},
   {path:"updatepassword",component:UpdatePasswordComponent},
   {path:"after-call",component:AfterCallComponent},
   {path:"home",component:HomeComponent,children:[
+    {path:"consultationresults",component:ConsultationResultsComponent},
     {path:"fetch-meetings",component:FetchMeetingsComponent},
     {path:"client-profile",component:ClientProfileComponent},
     {path:"consultation-result",component:ConsultationResultComponent},
     {path:"**",redirectTo:"fetch-meetings",pathMatch:"full"}
+  ]},
+  {path:"clients",component:ClientsComponent,children:[
+    {path:"clientsort",component:ClientssortComponent},
+    {path:"openclientmatter",component:OpenclientmatterComponent},
+    {path:"clientschedule",component:ClientscheduleComponent},
+    {path:"schedule",component:ScheduleComponent},
+    {path:"**",redirectTo:"clientsort",pathMatch:"full"}
   ]},
   {path:"attorneymenu",component:AttorneyMenuComponent,children:[
     {path:"profile",component:AttorneyProfileComponent},

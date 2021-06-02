@@ -36,9 +36,9 @@
 
  
   <div *ngFor="let legalTeam of members" class=" d-flex ml-3 p-3 mb-2 notify-row hover" 
-style="border-bottom: 1px solid #EDF1F3 ;justify-content: space-between;">
+style="border-bottom: 1px solid #EDF1F3 ;justify-content: space-between;" (click)="openclinetPage()">
 <div style="display: flex;">    
-<img src="{{legalTeam.img}}" class="position-relative rounded-circle " height="67px" width="67px" (click)="openclinetPage()">
+<img src="{{legalTeam.img}}" class="position-relative rounded-circle " height="67px" width="67px" >
     <div class="align-self-center px-3 position-relative">
         <ul class="list-unstyled mb-0 " style="left: -0.4rem;">
             <li class=" merri-reg f-18 theme-color ">

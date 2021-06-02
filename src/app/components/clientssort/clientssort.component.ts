@@ -33,8 +33,7 @@ export class ClientssortComponent implements OnInit {
   }
 
   openclinetPage(){
-    this.router.navigateByUrl('/openclientmatter')
-
+    this.router.navigateByUrl('/clients/clientschedule');
   }
 
 }

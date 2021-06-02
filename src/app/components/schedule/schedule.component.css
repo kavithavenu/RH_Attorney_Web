@@ -1,0 +1,11 @@
+.time-hover:hover , .isActive{
+    background-color: #52758B;
+    color: #ffffff !important;
+    cursor: pointer;
+}
+.border-right{
+    border-right: 4px solid #FEBF3A !important;
+}
+.line-height{
+    line-height: 1.4rem !important;
+}

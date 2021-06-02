@@ -22,7 +22,11 @@ export class HeaderComponent implements OnInit {
   toHomePage(){
     this.router.navigateByUrl('/home');
     this.routerEndPoint = "home";
-
+  }
+  clients(){
+    
+    this.router.navigateByUrl('/clients');
+    this.routerEndPoint = "clients";
   }
 
   consultationPage(){
@@ -43,7 +47,5 @@ export class HeaderComponent implements OnInit {
     }
     return false;
   }
-  clients(){
-    this.router.navigateByUrl('/')
-  }
+ 
 }
