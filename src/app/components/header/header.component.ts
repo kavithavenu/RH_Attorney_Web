@@ -94,8 +94,8 @@ proPic:string = "assets/ic_md@2x.png"
   }
 
   myCasePage(){
-    this.router.navigateByUrl('/mycase')
-    this.routerEndPoint = 'mycase';
+    this.router.navigateByUrl('/clients')
+    this.routerEndPoint = 'clients';
     this.imgSrc = "assets/users_1.png";
   }
 

@@ -30,7 +30,7 @@ export class UpdatePasswordComponent implements OnInit {
     //Change Pwd
   this.updatePasswordForm = this.fb.group({
     "emailID":[""],
-    "oldPassword": ['', [Validators.required, Validators.minLength(8)]],
+    "oldPassword": ['', [Validators.required, Validators.minLength(8)]],//[Validators.required,Validators.pattern(^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,13}$)]
     "newPassword": ['', [Validators.required, Validators.minLength(8)]],
     "confirmpassword": ['', Validators.required],
   }
