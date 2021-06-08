@@ -8,26 +8,25 @@
         
     </div>
         <ul class="list-unstyled nav" *ngIf="isLoggedIn">
-            <li class="nav-item"  [ngClass]="{'active':routerEndPoint == 'home'}" (click)="toHomePage()">
-        <span class="icon">
-            <i class="fas fa-home"></i>
-        </span> <span class="nav-link merri-reg f-13">Home</span>
+            <li class="nav-item"  [ngClass]="{'active':routerEndPoint == 'home'}" (click)="openQuiryModal()">
+                <span class="icon">
+                    <i class="fas fa-home"></i>
+                </span> 
+                <span class="nav-link merri-reg f-13">Home</span>
             </li>
-            <li class="nav-item"  [ngClass]="{'active':routerEndPoint == 'clients'}" (click)="clients()">
-    <span class="icon">
-        <i class="fas fa-users"></i>
-    </span> <span class="nav-link merri-reg f-13">Clients</span>
+            <li class="nav-item" [ngClass]="{'active':routerEndPoint == 'mycase'}"  (mouseenter) ="mouseEnter() "   (click)="myCasePage()">
+                <span class="icon">
+                    <img [src]="imgSrc" width="19">
+                </span> 
+                <span class="nav-link merri-reg f-13">Clients</span>
             </li>
-          
         </ul>
     </div>
     <div class="d-flex align-self-center mr-2" *ngIf="!isLoggedIn">
         <span class=" theme-color align-self-center px-1 raleway-bold f-15 hover" 
-            style="vertical-align: middle !important;">
-            <span (click)="loginPage()">LOGIN</span>
-        </span>
+        style="vertical-align: middle !important;"><span (click)="loginPage()">LOGIN</span></span>
         <span>
-            <img src="../../../assets/user.png" (click)="consultationPage()" width="39"  >
+            <img src="../../../assets/user.png" width="39" >
         </span>
     </div>
     <div class="d-flex align-self-center mr-2" *ngIf="isLoggedIn">
@@ -36,7 +35,7 @@
     <img src="../../../assets/notifications.png">
     </span>
         <span>
-            <img src="../../../assets/ic_md@2x.png" width="39"  >
+            <img src="{{proPic}}" width="45" height="45" class="rounded-circle"  >
         </span>
     </div>
     </div>

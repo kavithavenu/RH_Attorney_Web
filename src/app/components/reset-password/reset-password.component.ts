@@ -1,7 +1,13 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit , ElementRef ,ViewChild} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { LoginService } from 'src/app/services/login.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { AttorneyServiceService } from 'src/app/services/attorney-service.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-reset-password',
@@ -9,21 +15,32 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./reset-password.component.css']
 })
 export class ResetPasswordComponent implements OnInit {
-
   resetForm:FormGroup;
+  params:any;
+  email:string = "";
   @ViewChild('content',{static: true}) successModal:ElementRef;
 
-  constructor(private fb:FormBuilder, private router:Router,private modalService:NgbModal) { }
+  constructor(private fb:FormBuilder, private router:Router,private modalService:NgbModal, 
+    private activatedRouter:ActivatedRoute, private loginService:LoginService,private attoneyService:AttorneyServiceService,
+    private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.resetForm = this.fb.group({
-  
+      emailID:[""],
       password:["",Validators.required]
     })
+   this.onLoad();
   }
-
+onLoad(){
+  this.activatedRouter.queryParamMap.subscribe(params=>{
+    this.params = {...params}
+  })
+  if(this.params && this.params.params.id){
+    this.resetForm.get('emailID').setValue(atob(this.params.params.id))
+  }
+}
   register(){
-    this.router.navigateByUrl('/register')
+    this.router.navigateByUrl('/register');
   }
 
   openMsgPopup() {
@@ -45,10 +62,39 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   toLoginPage(){
-    this.modalService.dismissAll()
     this.router.navigateByUrl('/login');
     
   }
-
-
+    //message alerts showing
+    openSnackBar(message: string, action: string) {
+      this.snackBar.open(message, action, {
+         duration: 3000,
+         verticalPosition: 'bottom'
+      });
+    }
+submit(){
+  if(!this.resetForm.valid){
+    return;
+  }
+  this.attoneyService.showLoader.next(true);
+this.loginService.resetPass(this.resetForm.value).subscribe((posRes)=>{
+  this.attoneyService.showLoader.next(false);
+  this.openSnackBar(posRes.message,"");
+  if(posRes.response == 3){
+    this.openMsgPopup();
+    setTimeout(()=>{
+      this.modalService.dismissAll();
+      this.router.navigateByUrl('/login')
+    },2000)
+  }
+},(err:HttpErrorResponse)=>{
+  this.attoneyService.showLoader.next(false);
+  this.openSnackBar(err.message,"");
+  if(err.error instanceof Error){
+    console.warn("Client Slide Error",err.message);
+  }else{
+    console.warn("Server Slide Error",err.message);
+  }
+})
+}
 }

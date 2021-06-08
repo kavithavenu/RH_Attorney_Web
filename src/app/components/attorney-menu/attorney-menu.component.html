@@ -3,12 +3,12 @@
       <div class="col-md-2 p-0 ">
         <div class="sidebar " style="padding: 30px 0.5rem">
         <ul class="nav mt-2">
-          <li class="nav-item" [routerLink]="['/attorneymenu/profile']"  routerLinkActive="active">
+          <li class="nav-item" [routerLink]="['/attorneymenu/profile']" *ngIf="isLoggedIn" routerLinkActive="active">
             <a class="nav-link  "
                ><img class="sidebar-img" src="../../../assets/profile.png" >
                Profile</a>
           </li>
-          <li class="nav-item" [routerLink]="['/attorneymenu/notifications']" routerLinkActive="active">
+          <li class="nav-item" [routerLink]="['/attorneymenu/notifications']" *ngIf="isLoggedIn" routerLinkActive="active">
             <a class="nav-link raleway-medium "
             ><img class="sidebar-img" src="../../../assets/notifications.png">
             Notifications</a>
@@ -25,11 +25,11 @@
             <a class="nav-link raleway-medium "
                ><img class="sidebar-img" src="../../../assets/support.png">Tech Support</a>
           </li>
-          <li class="nav-item" [routerLink]="['/updatepassword']" routerLinkActive="active">
+          <li class="nav-item" [routerLink]="['/updatepassword']" *ngIf="isLoggedIn" routerLinkActive="active">
             <a class="nav-link raleway-medium "
                ><img class="sidebar-img" src="../../../assets/lock.png">Update Password</a>
           </li>
-          <li class="nav-item" routerLinkActive="active" (click)="openSignOutMethod(openSignOutModelContent)">
+          <li class="nav-item" routerLinkActive="active" *ngIf="isLoggedIn" (click)="openSignOutMethod(openSignOutModelContent)">
             <a class="nav-link raleway-medium "
                ><img class="sidebar-img" src="../../../assets/exit.png">Sign Out</a>
           </li>

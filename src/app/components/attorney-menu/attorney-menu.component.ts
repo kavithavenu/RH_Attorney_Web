@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AttorneyServiceService } from 'src/app/services/attorney-service.service';
 
 @Component({
   selector: 'app-attorney-menu',
@@ -9,21 +11,31 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class AttorneyMenuComponent implements OnInit {
 
   isLoggedIn:boolean = false;
+  custInfo:any;
   closeResult: string;
   constructor(private modalService: NgbModal,
-    //private attorneyService:AttorneyServiceService
+    private attorneyService:AttorneyServiceService,
+    private router:Router
     ) {
-    // this.attorneyService.isLoggedIn.subscribe(val=>{
-    //   this.isLoggedIn = val;
-    // })
+    this.attorneyService.isLoggedIn.subscribe(val=>{
+      this.isLoggedIn = val;
+    })
    }
 
   ngOnInit(): void {
+    this.custInfo = JSON.parse(localStorage.getItem('attorneyInfo'));
+    if(this.custInfo && this.custInfo.profilePic){
+      this.isLoggedIn = true;
+    }
   }
+  
   signOut(){
     this.modalService.dismissAll();
-//this.attorneyService.isLoggedIn.next(false);
+    localStorage.clear();
+    this.attorneyService.isLoggedIn.next(false);
+    this.router.navigateByUrl('/main')
   }
+
   openSignOutMethod(openSignOutModelContent){
     this.modalService.open(openSignOutModelContent, { ariaLabelledBy: 'modal-basic-title', size: 'sm', 
     backdrop: "static",centered: true }).result.then((result) => {
