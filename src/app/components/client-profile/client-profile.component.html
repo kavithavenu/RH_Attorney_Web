@@ -1,36 +1,45 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3 d-flex flex-column justify-content-center shadow text-center side-details" >
-            <div class="align-self-center mt-5">
-                <div class="mb-4 theme-color">
-                    <p class="f-17 merri-reg mb-1">Estate Planning In Office Consult</p>
-                    <p class="raleway-semibold">9:30 AM &nbsp;&nbsp; Nov 18,2020</p>
-                </div>
-                <div class=" position-relative">
-                    <img src="../../../assets/profile-1.jpg" width="130" class="rounded-circle mb-2 profile-img" >
-                    <div class="share-icon hover" (click)="shareLink()">
-                        <img src="../../../assets/share.png">
-                    </div>
-                   </div>
+            <div style="margin-top: 40px;padding: 5px 15px;" *ngIf="isAttendeeWaiting">
+                <div class="btn btn-sm bg-theme text-white f-16 merri-bold ">Attendee is waiting</div>
+            </div>
+            <div *ngIf="!isAttendeeWaiting" style="margin-bottom: 20px;">
+            </div>
+            <div>
+                <div class="align-self-center mt-5">
                 
-                <p class="f-12 theme-color raleway-semibold mt-2">Share The Meeting Link</p>
-                <p class="merri-reg f-17 theme-color mb-0">
-                    Manish Dhakal
-                </p>
-
-                <div class="proxi-reg theme-color mb-5 f-14">
-                    <span>manish@robinsonandhenry.com</span><br>
-                    <span>oooooooooo</span>
+                    <div class="mb-4 theme-color">
+                        <p class="f-17 merri-reg mb-1">Estate Planning In Office Consult</p>
+                        <p class="raleway-semibold">9:30 AM &nbsp;&nbsp; Nov 18,2020</p>
+                    </div>
+                    <div class=" position-relative">
+                        <img src="../../../assets/profile-1.jpg" width="130" class="rounded-circle mb-2 profile-img" >
+                        <div class="share-icon hover" (click)="shareLink()">
+                            <img src="../../../assets/share.png">
+                        </div>
+                       </div>
+                    
+                    <p class="f-12 theme-color raleway-semibold mt-2">Share The Meeting Link</p>
+                    <p class="merri-reg f-17 theme-color mb-0">
+                        Manish Dhakal
+                    </p>
+    
+                    <div class="proxi-reg theme-color mb-5 f-14">
+                        <span>manish@robinsonandhenry.com</span><br>
+                        <span>oooooooooo</span>
+                    </div>
+                    <div class="theme-color f-16 merri-reg">
+                      
+                    </div>
                 </div>
-                <div class="theme-color f-16 merri-reg">
-                  
+                <div class="p-2" style="text-align: -webkit-center;">
+                    <button mat-raised-button (click)="joinTheMeeting()" class="d-block rounded-pill opy-btn raleway-bold  text-center">
+                        Join the Meeting
+                    </button>
                 </div>
             </div>
-            <div class="p-2 align-self-center">
-                <button mat-raised-button   class="d-block rounded-pill opy-btn raleway-bold  text-center">
-                    Join the Meeting
-                </button>
-            </div>
+            
         </div>
       <div class="col-md-9 p-0" *ngIf="!isLoading">
           <div class="bg-theme-light p-3 merri-bold theme-color f-20 mt-3" style="max-width: 95%;">

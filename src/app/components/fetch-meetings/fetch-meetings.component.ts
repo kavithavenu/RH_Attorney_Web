@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class FetchMeetingsComponent implements OnInit {
   consultationsArray:Array<any> = [];
   meetings:Array<any> =[];
+  consulationsArrayLength:any;
+  meetingsLength:any;
   constructor(private router:Router) { }
 
   ngOnInit(): void {
@@ -54,8 +56,17 @@ export class FetchMeetingsComponent implements OnInit {
         isWaiting: false
       }
     ]
+    this.consulationsArrayLength = this.consultationsArray.length;
+    this.meetingsLength = this.meetings.length;
   }
-  clientProfilePage(){
-    
+  clientProfilePage(data,value){
+    console.log("client data...",data,value);
+    this.router.navigateByUrl('/home/client-profile');
+    // if(data.isWaiting){
+    //   this.router.navigateByUrl('/home/client-profile');
+    // }
+    // else{
+    //   this.router.navigateByUrl('/home/client-profile');
+    // }
   }
 }

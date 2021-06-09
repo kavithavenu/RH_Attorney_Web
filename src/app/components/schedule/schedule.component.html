@@ -50,8 +50,8 @@
     </div>
     <div class="row justify-content-center my-3">
         <div class="col-md-3 col-sm-6 text-center" >
-            <button mat-raised-button  [disabled]="!isTimeSelected" *ngIf="!isTimeSelected"  class="merri-bold w-100 py-1 rounded-pill  text-light">Reshedule</button>
-            <img src="../../../assets/reschedule_1.png" *ngIf="isTimeSelected" (click)="openSuccess()"  class="img-fluid hover">
+            <button mat-raised-button  [disabled]="!isTimeSelected" *ngIf="!isTimeSelected"  class="merri-bold w-100 py-1 rounded-pill" style="color: gray;">Confirm Time</button>
+            <img src="../../../assets/button_1.png" *ngIf="isTimeSelected" (click)="openSuccess()"  class="img-fluid hover">
         </div>
     </div>
 </div>
@@ -65,10 +65,10 @@
         </div>
         <div class=" theme-color text-center raleway-medium f-18 my-3 line-height" >
             <p class="m-auto">
-                {{userDetails?.firstName}}, We've   Resheduled  your
+                Donald Eby{{userDetails?.firstName}},  your meeting
             </p>
             <p>
-                appointment
+                is scheduled successfully
             </p>
         </div>
         <div class="d-flex justify-content-center">

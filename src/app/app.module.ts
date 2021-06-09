@@ -54,6 +54,8 @@ import { ConsultationResultComponent } from './components/consultation-result/co
 import { JoinTheCallComponent } from './components/join-the-call/join-the-call.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
+import { VideoCallComponent } from './components/video-call/video-call.component';
+import { LoadingComponent } from './components/loading/loading.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,7 +86,9 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
     TechSupportComponent,
     JoinTheCallComponent,
     ClientsComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    VideoCallComponent,
+    LoadingComponent
   ],
     entryComponents:[InvitePeopleComponent],
   imports: [

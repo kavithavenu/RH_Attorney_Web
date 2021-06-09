@@ -1,8 +1,8 @@
 <div class="position-relative bg-theme-light p-2 mt-2">
-    <div class=" theme-color  f-17 raleway-bold px-3">
-        All Attorneys
+    <div class=" theme-color  f-17 raleway-bold px-3" style="margin-left: 15px;">
+        Consultation Results Pending ({{consulationsArrayLength}})
     </div>
-    <div class="position-absolute"  style="right: 4rem; top: 0;">
+    <div class="position-absolute"  style="right: 4rem; top: 5px;">
         <img src="../../../assets/siren.png" width="30">
     </div>
    </div>
@@ -13,7 +13,7 @@
                 <img src="{{user.image}}" class="rounded-circle shadow border-white" width="70">
             </div>
             <div class="align-self-center">
-                <ul class="list-unstyled mb-0">
+                <ul class="list-unstyled mb-0" [routerLink]="['/home/consultationresults']">
                     <li class="f-18 merri theme-color">
                         {{user.name}}
                     </li>
@@ -26,16 +26,16 @@
        </div>
    </div>
    <div class="d-flex justify-content-between bg-theme-light p-2 mt-2">
-    <div class=" theme-color  f-17 raleway-bold px-3">
-        Today’s Meetings (4)
+    <div class=" theme-color  f-17 raleway-bold px-3" style="margin-left: 15px;">
+        Today’s Meetings ({{meetingsLength}})
     </div>
     <div class="px-3">
         <span class="theme-color merri-reg f-15">8th Feb, 2021</span>
     </div>
    </div>
    <div class="container-fluid ">
-    <div class="row" *ngFor="let meeting of meetings;">
-        <div class="col-md-12 p-4 d-flex bg-light hover-effect border-bottom position-relative" (click)="clientProfilePage()">
+    <div class="row" *ngFor="let meeting of meetings; let i=index;">
+        <div class="col-md-12 p-4 d-flex bg-light hover-effect border-bottom position-relative"  [routerLink]="['/home/client-profile',meeting.isWaiting]"> <!--(click)="clientProfilePage(meeting,i)"-->
             <div class="px-3">
                 <img src="{{meeting.image}}" class="rounded-circle shadow border-white" width="70">
             </div>

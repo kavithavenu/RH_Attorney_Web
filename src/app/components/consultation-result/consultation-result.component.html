@@ -1,13 +1,151 @@
-<div class="bg-theme-light">
-   <div class="pl-4 py-1">
-    <i class="fas fa-arrow-left theme-color"></i>
-    <span class="theme-color raleway-bold ml-2 f-21">
-        Consultation Results
-    </span>
-   </div>
+<div class="mt-3">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb container-fluid merri-bold theme-color px-4 m-0 ">
+          <li class="breadcrumb-item p-2" aria-current="page">
+
+            <img class="text-center" src="../../../assets/ic_back.png" [routerLink]="['/home/fetch-meetings']">
+            <span class="hover raleway-bold f-22 ml-3   theme-color" [routerLink]="['/home/fetch-meetings']"> Consultation Results </span>   </li>
+        </ol>
+      </nav>
 </div>
+    <div class="container" style="padding: 40px;">
+        <div *ngIf="isOpenSendFreeAgreement">
+            <div >
+                <div class="row" *ngIf="pageIndex == 0">
+                <span class="raleway-semibold f-19 theme-color">Matter Description</span>
+                </div>
+                <div class="" style="padding: 20px 0px;">
+                <div class="row" *ngIf="pageIndex == 0">
+                <div class="col-md-4 " style="padding: 15px 20px 15px 0px;" *ngFor="let data of matterDescriptionsList;let i = index" >
+                <div class="selected-data shadow" style="border: 1px solid #ACACAC;text-align: center;
+                border-radius: 36px;padding: 10px 40px;color: #3E454C;cursor: pointer;" [ngClass]="{'highlighted': data.id === selectedRow }"
+                (click)="selectedDesc(data)" >
+                <span class="raleway f-16" >
+                {{data.data}}
+                </span>
+                </div>
+                </div>
+                <div class="col-md-4 align-self-center" *ngIf="showDescInput">
+                <div class="input-group borde-bottom-theme">
+                <input type="text" class="form-control border-0">
+                <span class="input-group-text border-0 bg-white" id="basic-addon2">
+                <mat-icon class="theme-color f-30">edit</mat-icon>
+                </span>
+                </div>
+                </div>
+                </div>
+                <div class="text-center" *ngIf="pageIndex == 0">
+                <button class="btn btn-sm f-16 merri-bold bg-theme text-white" style="height: 40px;padding: 0 35px;" (click)="pageIndex = 1">Save & Continue</button>
+                </div>
+                </div>
+                </div>
+                <div *ngIf="pageIndex == 1"> 
+                <div class="row" style="padding: 15px 20px;" >
+                <span class="raleway-semibold f-22 theme-color">Consultation Notes</span>
+                </div>
+                <div>
+                <form [formGroup]="sendMessageForm" style="padding: 10px;">
+                <textarea formControlName="typedMessage" class="proxi-reg f-15" style="resize: none; width: 90%;border: none;letter-spacing: 0px;
+                color: #0F1010;text-align: left;outline: none;height: 20vh;padding: 7px;box-shadow: 0px 1px 22px #52758B5C;">
+                </textarea>
+                </form>
+                </div>
+                <div style="text-align: end;padding: 40px 115px;">
+                <button class="btn btn-sm f-16 merri-bold" (click)="pageIndex = 2"
+                style="height: 40px; background: #52758B ;color: #ffffff;padding: 0 35px;">Save & Continue</button>
+                </div>
+                </div>
+                <div>
+                <div class="row" *ngIf="pageIndex == 2">
+                <span class="raleway-semibold f-19 theme-color">Payment Option</span>
+                </div>
+                <div class="" style="padding: 30px 0px;" *ngIf="pageIndex == 2">
+                <div class="row" >
+                <div class="col-md-4" style="padding: 20px 20px 20px 0px;" *ngFor="let data of paymentOtions;let i = index" >
+                <div class="selected-data" style="border: 1px solid #ACACAC;text-align: center;
+                border-radius: 36px;padding: 10px 40px;color: #3E454C;cursor: pointer;" [ngClass]="{'highlighted': data.id === selectedRow }"
+                (click)="pageIndex = 3" >
+                <span class="raleway f-16" >
+                Lorem ipsum
+                </span>
+                </div>
+                </div>
+                </div>
+                
+                </div>
+                </div>
+                <div>
+                <div class="row" style="justify-content: center;padding: 15px;" *ngIf="pageIndex == 3">
+                <div class="col-md-4">
+                <div class="raleway-semibold f-19 theme-color" >Ask for a 5 star review?</div>
+                </div>
+                </div>
+                <div class="row" style="justify-content: center;padding: 10px;" *ngIf="pageIndex == 3">
+                <div class="col-md-4">
+                <button class="w-100 btn btn-sm raleway-semibold f-15" style="letter-spacing: 0px;
+                color: #3E454C;box-shadow: 0px 3px 6px #00000029;padding: 10px;
+                border: 1px solid #ACACAC;
+                border-radius: 36px;" (click)="closeFreeAgree()">YES</button>
+                </div>
+                </div>
+                <div class="row" style="justify-content: center;padding: 10px;" *ngIf="pageIndex == 3">
+                <div class="col-md-4">
+                <button class="w-100 btn btn-sm raleway-semibold f-15" style="letter-spacing: 0px;
+                color: #3E454C;box-shadow: 0px 3px 6px #00000029;padding: 10px;
+                border: 1px solid #f0d8d8;
+                border-radius: 36px;" (click)="closeFreeAgree()">NO</button>
+                </div>
+                </div>
+                </div>
+        </div>
+    
+    <div *ngIf="!isOpenSendFreeAgreement">
+        <div class="row">
+        <span class="raleway-semibold f-19 theme-color">Non-Retention Reason</span>
+        </div>
+        <div class="" style="padding: 30px 0px;">
+        <div class="row" >
+        <div class="col-md-4" style="padding: 20px 20px 20px 0px;" *ngFor="let data of matterDescriptionsList;let i = index" >
+        <div class="selected-data" style="border: 1px solid #ACACAC;text-align: center;
+        border-radius: 36px;padding: 10px 40px;color: #3E454C;cursor: pointer;" [ngClass]="{'highlighted': data.id === selectedRow }"
+        (click)="selectedDesc(data)" >
+        <span class="raleway f-16" >
+        {{data.data}}
+        </span>
+        </div>
+        </div>
+        <div class="col-md-4 align-self-center" *ngIf="showDescInput">
+        <div class="input-group borde-bottom-theme">
+        <input type="text" class="form-control border-0">
+        <span class="input-group-text border-0 bg-white" id="basic-addon2">
+        <mat-icon class="theme-color f-30">edit</mat-icon>
+        </span>
+        </div>
+        </div>
+        </div>
+        <div class="row" style="justify-content: center;">
+        <button class="btn btn-sm f-16 merri-bold bg-theme text-white" (click)="pageIndex = 4" style="height: 40px;padding: 0 35px;">Save & Continue</button>
+        </div>
+        </div>
+    </div>
+    
+    </div>
+
+
+
+<!-- <div class="mt-3">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb container-fluid merri-bold theme-color px-4 m-0 ">
+          <li class="breadcrumb-item p-2" aria-current="page">
+
+            <img class="text-center" src="../../../assets/ic_back.png" [routerLink]="['/home/fetch-meetings']">
+            <span class="hover raleway-bold f-22 ml-3   theme-color" [routerLink]="['/home/fetch-meetings']"> Consultation Results </span>   </li>
+        </ol>
+      </nav>
+</div>
+
 <div class="container" style="padding: 40px;">
-    <div > <!--*ngIf="!openConsultationNotes"-->
+    <div > 
         <div class="row" *ngIf="pageIndex == 0">
             <span class="raleway-semibold f-19 theme-color">Matter Description</span>
         </div>
@@ -36,7 +174,7 @@
             </div>
         </div>
     </div>
-    <div *ngIf="pageIndex == 1"> <!--*ngIf="openConsultationNotes"-->
+    <div *ngIf="pageIndex == 1"> 
         <div class="row" style="padding: 15px 20px;" >
             <span class="raleway-semibold f-22 theme-color">Consultation Notes</span>
         </div>
@@ -52,7 +190,7 @@
              style="height: 40px; background: #52758B ;color: #ffffff;padding: 0 35px;">Save & Continue</button>
         </div>
     </div>
-    <div>
+    <div *ngIf="isOpenRatings">
         <div class="row" *ngIf="pageIndex == 2">
             <span class="raleway-semibold f-19 theme-color">Payment Option</span>
         </div>
@@ -61,7 +199,7 @@
                 <div class="col-md-4" style="padding: 20px 20px 20px 0px;" *ngFor="let data of paymentOtions;let i = index" >
                 <div class="selected-data" style="border: 1px solid #ACACAC;text-align: center;
                 border-radius: 36px;padding: 10px 40px;color: #3E454C;cursor: pointer;" [ngClass]="{'highlighted': data.id === selectedRow  }"
-                (click)="pageIndex = 3"  >
+                (click)="openRatings()"  > 
                     <span class="raleway f-16" >
                             Lorem ipsum
                         </span>
@@ -71,26 +209,26 @@
             
         </div>
     </div>
-    <div>
-        <div class="row" style="justify-content: center;padding: 15px;" *ngIf="pageIndex == 4">
+    <div *ngIf="!isOpenRatings">
+        <div class="row" style="justify-content: center;padding: 15px;" > 
             <div class="col-md-4">
                 <div class="raleway-semibold f-19 theme-color" >Ask for a 5 star review?</div>
             </div>
         </div>
-        <div class="row" style="justify-content: center;padding: 10px;" *ngIf="pageIndex == 4">
+        <div class="row" style="justify-content: center;padding: 10px;" > 
             <div class="col-md-4">
                 <button class="w-100 btn btn-sm raleway-semibold f-15" style="letter-spacing: 0px;
                 color: #3E454C;box-shadow: 0px 3px 6px #00000029;padding: 10px;
                 border: 1px solid #ACACAC;
-                border-radius: 36px;">YES</button>
+                border-radius: 36px;" (click)="closeFreeAgree()">YES</button>
             </div>
         </div>
-        <div class="row" style="justify-content: center;padding: 10px;" *ngIf="pageIndex == 4">
+        <div class="row" style="justify-content: center;padding: 10px;" > 
             <div class="col-md-4">
                 <button class="w-100 btn btn-sm raleway-semibold f-15" style="letter-spacing: 0px;
                 color: #3E454C;box-shadow: 0px 3px 6px #00000029;padding: 10px;
                 border: 1px solid #ACACAC;
-                border-radius: 36px;">NO</button>
+                border-radius: 36px;" (click)="closeFreeAgree()">NO</button>
             </div>
         </div>
     </div>
@@ -125,4 +263,4 @@
         </div>
     </div>
 
-</div>
+</div> -->

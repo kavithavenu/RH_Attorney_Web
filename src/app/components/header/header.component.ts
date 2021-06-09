@@ -11,7 +11,7 @@ import { AttorneyServiceService } from 'src/app/services/attorney-service.servic
 })
 export class HeaderComponent implements OnInit {
 isLoggedIn:boolean = false;
-imgSrc:string = "assets/users_2.png";
+imgSrc:string = "assets/users_1.png";
 routerEndPoint:string = "";
 homePageVisitingCount:number = 0;
 custInfo:any;
@@ -58,10 +58,10 @@ proPic:string = "assets/ic_md@2x.png"
     }
     }
   mouseEnter(){
-    this.imgSrc = "assets/users_1.png";
+    this.imgSrc = "assets/users_2.png";
   }
   mouseLeave(){
-    this.imgSrc = "assets/users_2.png";
+    this.imgSrc = "assets/users_1.png";
   }
   navigateToHome(){
     this.router.navigateByUrl('/main')

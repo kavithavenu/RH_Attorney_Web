@@ -19,10 +19,10 @@
         This meeting has ended
     </li>
     <li class="text-center mb-4">
-        <button mat-raised-button class="rounded-pill bg-yellow raleway-bold px-3">Send Fee Agreement</button>
+        <button mat-raised-button class="rounded-pill bg-yellow raleway-bold px-3" [routerLink]="['/home/consultation-result',openSendFeeAgreement]"  >Send Fee Agreement</button> <!--(click)="sendFeeAgree()"-->
     </li>
     <li class="text-center mt-2">
-        <button mat-raised-button class="rounded-pill theme-color raleway-bold bg-outline px-3">Send Non-Retention</button>
+        <button mat-raised-button class="rounded-pill theme-color raleway-bold bg-outline px-3" [routerLink]="['/home/consultation-result',!openSendFeeAgreement]">Send Non-Retention</button>
     </li>
 </ul>
 </div>

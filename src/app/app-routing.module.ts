@@ -24,22 +24,22 @@ import { ConsultationResultComponent } from './components/consultation-result/co
 import { JoinTheCallComponent } from './components/join-the-call/join-the-call.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
+import { VideoCallComponent } from './components/video-call/video-call.component';
 
 const routes: Routes = [
   {path:"main",component:MainWrapperComponent},
   {path:"login",component:LoginComponent},
   {path:"forgotPassword",component:ForgotPasswordComponent},
   {path:"resetPassword",component:ResetPasswordComponent},
-
-
   {path:"clientspopoup",component:ClientspopupComponent},
   {path:"updatepassword",component:UpdatePasswordComponent},
+  {path:"on-call",component:VideoCallComponent},
   {path:"after-call",component:AfterCallComponent},
   {path:"home",component:HomeComponent,children:[
     {path:"consultationresults",component:ConsultationResultsComponent},
     {path:"fetch-meetings",component:FetchMeetingsComponent},
-    {path:"client-profile",component:ClientProfileComponent},
-    {path:"consultation-result",component:ConsultationResultComponent},
+    {path:"client-profile/:id",component:ClientProfileComponent},
+    {path:"consultation-result/:id",component:ConsultationResultComponent},
     {path:"**",redirectTo:"fetch-meetings",pathMatch:"full"}
   ]},
   {path:"clients",component:ClientsComponent,children:[

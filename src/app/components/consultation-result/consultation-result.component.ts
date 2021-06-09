@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-consultation-result',
@@ -7,13 +8,17 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./consultation-result.component.css']
 })
 export class ConsultationResultComponent implements OnInit {
+  isOpenSendFreeAgreement:boolean;
   disableEdit:boolean = false;
+  isOpenRatings:boolean = true;
   selectedRow: any;
   sendMessageForm:FormGroup;
   openConsultationNotes:boolean = false;
   pageIndex:number = 0;
   paymentOtions:Array<any> = [1,2,3,4,5,6]
   showDescInput:boolean = false;
+  sub: any;
+  id: any;
     matterDescriptionsList:any = [
     {
       "id":"1",
@@ -45,12 +50,31 @@ export class ConsultationResultComponent implements OnInit {
     }
   ]
     
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,private router:Router,private activatedRoute: ActivatedRoute,) { }
 
   ngOnInit(): void {
+
+
+    this.onLoad();
+
     this.sendMessageForm = this.fb.group({
       typedMessage:""
     })
+  }
+
+  onLoad(){
+
+    this.sub = this.activatedRoute.params.subscribe(params => {
+      this.id = params['id'];
+      console.log("id from component : ", this.id);
+
+      var isTrueSet = (this.id.toLowerCase() === 'true');
+      
+      console.log("str to bool from component : ", isTrueSet);
+      this.isOpenSendFreeAgreement = isTrueSet;
+      
+    })
+    
   }
 
   selectedDesc(value: any) {
@@ -76,6 +100,13 @@ export class ConsultationResultComponent implements OnInit {
     console.log(this.sendMessageForm.value)
   }
 
+  openRatings(){
+    console.log("open ratings")
+    this.isOpenRatings= false;
+  }
 
+  closeFreeAgree(){
+    this.router.navigateByUrl('/after-call')
+  }
 
 }
