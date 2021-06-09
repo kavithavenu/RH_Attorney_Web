@@ -16,7 +16,7 @@ export class ConsultationResultsComponent implements OnInit {
       "text":"oooooo",
     },
   ]
-
+  openSendFeeAgreement:boolean = true;
   constructor(private router:Router) { }
 
   ngOnInit(): void {
