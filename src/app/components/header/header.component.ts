@@ -102,10 +102,13 @@ proPic:string = "assets/ic_md@2x.png"
  
   isNotLoginPages():Boolean{
     if ((this.router.url != '/') && (this.router.url != '/login') && (this.router.url != '/register')&& (this.router.url != '/forgotPassword')
-    &&  (this.router.url != '/resetPassword') && (this.router.url != '/updatepassword') ) {
-              return true;
-      }
-      return false;
+    &&  (this.router.url != '/resetPassword') && (this.router.url != '/updatepassword') && 
+    (this.router.url != '/on-call') && (this.router.url != '/after-call')  &&
+    (this.router.url.indexOf('/home/consultation-result') == -1)  ) 
+    {
+      return true;
+    }
+    return false;
   }
 
   isNotLoginVisable():Boolean{
