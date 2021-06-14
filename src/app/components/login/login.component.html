@@ -3,7 +3,7 @@
         <div class="row justify-content-end" style="min-height: 85vh;">
             <div class="col-sm-4 px-4 mt-3">
                 <div class="text-center ">
-                    <img src="../../../assets/RobinsonandHenry_Square_DarkBlue_Logo.png" width="90">
+                    <img src="../../../assets/logo@2x.png" width="90">
                 </div>
                 <form [formGroup]="loginForm" class="login-form m-auto">
                     <div  class="mb-1 mt-3 login-form text-center">
@@ -16,7 +16,8 @@
                           <mat-form-field class="w-100" appearance="fill">
                             <mat-label class="raleway-semibold theme-color f-10">PASSWORD</mat-label>
                             <input matInput  formControlName="password" class="bg-theme" [type]="hide ? 'password' : 'text'" >
-                            <mat-error>Enter Password*</mat-error>
+                            <mat-error  *ngIf="loginForm.get('password').hasError('required')">Enter Password*</mat-error>
+                            <mat-error *ngIf="loginForm.get('password').hasError('minlength')">Not a Valid password..!</mat-error>
                             <button mat-icon-button matSuffix type="button" class="text-black-50" (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                 <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                

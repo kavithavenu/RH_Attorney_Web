@@ -27,7 +27,7 @@ export class ResetPasswordComponent implements OnInit {
   ngOnInit(): void {
     this.resetForm = this.fb.group({
       emailID:[""],
-      password:["",Validators.required]
+      password:["",[Validators.required,Validators.pattern("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%])(?=\\S+$).{8,13})")]]
     })
    this.onLoad();
   }
@@ -72,29 +72,31 @@ onLoad(){
          verticalPosition: 'bottom'
       });
     }
-submit(){
-  if(!this.resetForm.valid){
-    return;
+  submit(){
+    if(!this.resetForm.valid){
+      this.openSnackBar("Provide required data to resetpassword","");
+      return;
+    }
+    this.attoneyService.showLoader.next(true);
+    this.loginService.resetPass(this.resetForm.value).subscribe((posRes)=>{
+      console.log("reset pwd res...",posRes);
+    this.attoneyService.showLoader.next(false);
+    this.openSnackBar(posRes.message,"");
+    if(posRes.response == 3){
+      this.openMsgPopup();
+      setTimeout(()=>{
+        this.modalService.dismissAll();
+        this.router.navigateByUrl('/login')
+      },2000)
+    }
+    },(err:HttpErrorResponse)=>{
+      this.attoneyService.showLoader.next(false);
+      this.openSnackBar(err.message,"");
+      if(err.error instanceof Error){
+        console.warn("Client Slide Error",err.message);
+      }else{
+        console.warn("Server Slide Error",err.message);
+      }
+    })
   }
-  this.attoneyService.showLoader.next(true);
-this.loginService.resetPass(this.resetForm.value).subscribe((posRes)=>{
-  this.attoneyService.showLoader.next(false);
-  this.openSnackBar(posRes.message,"");
-  if(posRes.response == 3){
-    this.openMsgPopup();
-    setTimeout(()=>{
-      this.modalService.dismissAll();
-      this.router.navigateByUrl('/login')
-    },2000)
-  }
-},(err:HttpErrorResponse)=>{
-  this.attoneyService.showLoader.next(false);
-  this.openSnackBar(err.message,"");
-  if(err.error instanceof Error){
-    console.warn("Client Slide Error",err.message);
-  }else{
-    console.warn("Server Slide Error",err.message);
-  }
-})
-}
 }

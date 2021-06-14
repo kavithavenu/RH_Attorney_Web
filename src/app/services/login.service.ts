@@ -48,6 +48,10 @@ export class LoginService {
   verifyOTP(data):Observable<any>{
     return this.http.post(`${this.baseUrl}/api/attorneys/verify`,data)
   }
+  // resend OTP
+  resendOtp(data):Observable<any>{
+    return this.http.post(`${this.baseUrl}/api/attorneys/resendOtp`,data);
+  }
   
   // Reset Pass
   resetPass(data):Observable<any>{

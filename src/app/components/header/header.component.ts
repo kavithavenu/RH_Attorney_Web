@@ -35,9 +35,9 @@ proPic:string = "assets/ic_md@2x.png"
         let url = this.router.url.split('/');
         this.routerEndPoint = url[1]
         if(url[1] == 'mycase'){
-          this.imgSrc = "assets/users_1.png"
-        }else{
           this.imgSrc = "assets/users_2.png"
+        }else{
+          this.imgSrc = "assets/users_1.png"
         }
         
       }

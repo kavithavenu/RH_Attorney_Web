@@ -10,15 +10,17 @@
         <div class="col-md-10 p-2">
             <div class="pb-3 pt-5 theme-color f-28 raleway-bold text-center">Verification</div>
              <div class="raleway theme-color mb-4 text-center">Enter the verfication code.<br>
-                <span>we just sent to your phone.</span>
+                <span>we just sent to your Email.</span>
             </div>
             <div class="otp-container pt-4">
-                <ng-otp-input class="text-center py-3 pb-5" (onInputChange)="onOtpChange($event)"  [config]="{length:4}"></ng-otp-input>
+                <ng-otp-input class="text-center py-3 pb-5" (onInputChange)="onOtpChange($event)"  [config]="config"></ng-otp-input>
+                <p class="f-14 text-danger raleway-bold text-center mt-2" *ngIf="isError">Enter valid OTP...</p>
+                <ngb-alert [type]="alertType" class="f-12" *ngIf="showAlert">{{ alertMsg }}</ngb-alert>
 
             </div>
 
             <div class="raleway theme-color mb-3 pt-4 pb-3 f-15 text-center">If you didn't receive a code!
-                <span class="raleway-bold f-15"> Resend</span>
+                <span class="raleway-bold hover f-15" (click)="resend()"> Resend</span>
             </div>
 
             <div class="text-center mt-2">
