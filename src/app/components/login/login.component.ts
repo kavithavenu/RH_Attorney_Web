@@ -42,7 +42,10 @@ export class LoginComponent implements OnInit {
     });
     this.loginForm = this.fb.group({
       emailID:["",Validators.required],
-      password:["",[Validators.required,Validators.minLength(8)]]
+      password:["",[Validators.required,Validators.minLength(8)]],
+      deviceID:"123",
+      deviceToken:"123",
+      deviceType:"laptop"
     });
    
     this.getLatLang()
@@ -58,13 +61,13 @@ export class LoginComponent implements OnInit {
   }
 // Get current location lat and lang
 getLatLang(){
-  this.loginService.getPosition().then(pos=>
-    {
-      this.lat = pos.lat;
-      this.lang = pos.lng;
-       console.log(`Positon: ${pos.lng} ${pos.lat}`);
+  // this.loginService.getPosition().then(pos=>
+  //   {
+  //     this.lat = pos.lat;
+  //     this.lang = pos.lng;
+  //      console.log(`Positon: ${pos.lng} ${pos.lat}`);
       
-    });
+  //   });
 }
   userDetailsPage(){
     this.router.navigateByUrl('/home')

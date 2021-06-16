@@ -113,5 +113,6 @@ public userDetails:any = {};
   }
   closeModal(){
     this.modalService.dismissAll();
+    this.router.navigateByUrl('/clients/clientsort');
   }
 }

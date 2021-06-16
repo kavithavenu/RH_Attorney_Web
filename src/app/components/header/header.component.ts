@@ -74,7 +74,7 @@ proPic:string = "assets/ic_md@2x.png"
   }
 
   notificationPage(){
-    this.router.navigateByUrl('/notifications')
+    this.router.navigateByUrl('/attorneymenu/notifications')
   }
   openQuiryModal(){
    this.homePage()
