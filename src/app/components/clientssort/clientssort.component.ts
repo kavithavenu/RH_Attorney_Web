@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -26,10 +27,14 @@ export class ClientssortComponent implements OnInit {
       
     },
   ]
-
-  constructor(private router:Router) { }
+  FirmClients:boolean = false;
+  MyClients:boolean = false;
+  TeamClients:boolean = false;
+  selected=-1;
+  constructor(private router:Router,private fb: FormBuilder) { }
 
   ngOnInit(): void {
+   
   }
 
   openclinetPage(){

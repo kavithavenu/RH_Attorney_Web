@@ -7,36 +7,29 @@
             My Clients
           </li>
           <li style="margin-left: 650px;" class="f-17 mt-1">
-              <input type="checkbox"><span class="ml-3">Firm Clients</span>
+            <div>
+                <section class="example-section">
+                    <mat-checkbox style="padding: 5px 25px;" class="example-margin merri-bold f-15" [checked]="selected === 1" (change)="selected = 1" [(ngModel)]="FirmClients">Firm Clients</mat-checkbox>
+                    <mat-checkbox style="padding: 5px 25px;" class="example-margin merri-bold f-15" [checked]="selected === 2" (change)="selected = 2" [(ngModel)]="MyClients">My Clients</mat-checkbox>
+                    <mat-checkbox style="padding: 5px 25px;" class="example-margin merri-bold f-15" [checked]="selected === 3" (change)="selected = 3" [(ngModel)]="TeamClients">Team Clients</mat-checkbox>  
+                </section>
+              </div>   
           </li>
-          <li class="f-17 mt-1 ml-5">
-            <input type="checkbox"><span class="ml-3">My Clients</span>
-        </li>
-        <li class="f-17 mt-1 ml-5">
-            <input type="checkbox"><span class="ml-3">Team Clients</span>
-        </li>
         </ol>
       </nav>
   </div> 
-
-
 </div>
 
   
  <div class="col-md-11 mt-3 ml-2 ">
     <input type="text"   class=" p-2 w-100 pr-5 mr-5 " style="border: none; border-radius: 5px; outline-style: none !important;font-size: 14px; font-weight: 500;padding-right: 100%;
     height: 40px;padding-left: 40px !important;background-color: #F5F5F5 ;">
-      
- 
-
-<div class="searchIcon" style="margin-left: 10px;margin-top: -28px;">
-    <!-- <i class="fas fa-search" aria-hidden="true"></i> -->
-    <img src="../../../assets/search.png">
-</div>
+    <div class="searchIcon" style="margin-left: 10px;margin-top: -28px;">
+        <img src="../../../assets/search.png">
+    </div>
 </div> 
-
  
-  <div *ngFor="let legalTeam of members" class=" d-flex ml-3 p-3 mb-2 notify-row hover" 
+<div *ngFor="let legalTeam of members" class=" d-flex ml-3 p-3 mb-2 notify-row hover" 
 style="border-bottom: 1px solid #EDF1F3 ;justify-content: space-between;" (click)="openclinetPage()">
 <div style="display: flex;">    
 <img src="{{legalTeam.img}}" class="position-relative rounded-circle " height="67px" width="67px" >
@@ -44,8 +37,7 @@ style="border-bottom: 1px solid #EDF1F3 ;justify-content: space-between;" (click
         <ul class="list-unstyled mb-0 " style="left: -0.4rem;">
             <li class=" merri-reg f-18 theme-color ">
                 {{legalTeam.name}}
-            </li>
-          
+            </li>   
         </ul>
     </div>
 </div>

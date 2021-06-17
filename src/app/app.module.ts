@@ -14,6 +14,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MainWrapperComponent } from './components/main-wrapper/main-wrapper.component';
@@ -98,6 +99,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    MatCheckboxModule,
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
