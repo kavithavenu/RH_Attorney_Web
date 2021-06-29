@@ -2,7 +2,6 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb container-fluid merri-bold theme-color px-4 m-0 ">
           <li class="breadcrumb-item p-2" aria-current="page">
-
             <img class="text-center" src="../../../assets/ic_back.png" [routerLink]="['/home/fetch-meetings']">
             <span class="hover raleway-bold f-22 ml-3   theme-color" [routerLink]="['/home/fetch-meetings']"> Consultation Results </span>   </li>
         </ol>
@@ -12,31 +11,56 @@
         <div *ngIf="isOpenSendFreeAgreement">
             <div >
                 <div class="row" *ngIf="pageIndex == 0">
-                <span class="raleway-semibold f-19 theme-color">Matter Description</span>
+                    <span class="raleway-semibold f-19 theme-color">Matter Description</span>
                 </div>
                 <div class="" style="padding: 20px 0px;">
-                <div class="row" *ngIf="pageIndex == 0">
-                <div class="col-md-4 " style="padding: 15px 20px 15px 0px;" *ngFor="let data of matterDescriptionsList;let i = index" >
-                <div class="selected-data shadow" style="border: 1px solid #ACACAC;text-align: center;
-                border-radius: 36px;padding: 10px 40px;color: #3E454C;cursor: pointer;" [ngClass]="{'highlighted': data.id === selectedRow }"
-                (click)="selectedDesc(data)" >
-                <span class="raleway f-16" >
-                {{data.data}}
-                </span>
+                    <div *ngIf="pageIndex == 0">
+
+                    
+                    <div class="row" >
+                        <div class="col-md-4 " style="padding: 15px 20px 15px 0px;" *ngFor="let data of matterDescriptionsList;let i = index" >
+                            <div class="selected-data shadow" style="border: 1px solid #ACACAC;text-align: center;
+                            border-radius: 36px;padding: 10px 40px;color: #3E454C;cursor: pointer;" [ngClass]="{'highlighted': data.id === selectedRow }"
+                             >
+                                <span class="raleway f-16" >
+                                {{data.data}}
+                                </span>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-4 align-self-center" *ngIf="showDescInput">
+                            <div class="input-group borde-bottom-theme">
+                                <input type="text" class="form-control border-0" id="insertedMatterDescription" name="insertedMatterDescription" [(ngModel)]="insertedMatterDescription
+                                ">
+                                <span class="input-group-text border-0 bg-white" id="basic-addon2">
+                                    <mat-icon class="theme-color f-30">edit</mat-icon>
+                                </span>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 " style="padding: 15px 20px 15px 0px;"  >
+                            <div class="selected-data shadow" style="border: 1px solid #ACACAC;text-align: center;
+                            border-radius: 36px;padding: 10px 40px;color: #3E454C;cursor: pointer;" 
+                            (click)="selectedDesc()" >
+                                <span class="raleway f-16" >
+                                Other
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 align-self-center" *ngIf="showDescInput">
+                            <div class="input-group borde-bottom-theme">
+                                <input type="text" class="form-control border-0" id="insertedMatterDescription" name="insertedMatterDescription" [(ngModel)]="insertedMatterDescription
+                                ">
+                                <span class="input-group-text border-0 bg-white" id="basic-addon2">
+                                    <mat-icon class="theme-color f-30">edit</mat-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                </div>
-                <div class="col-md-4 align-self-center" *ngIf="showDescInput">
-                <div class="input-group borde-bottom-theme">
-                <input type="text" class="form-control border-0">
-                <span class="input-group-text border-0 bg-white" id="basic-addon2">
-                <mat-icon class="theme-color f-30">edit</mat-icon>
-                </span>
-                </div>
-                </div>
-                </div>
-                <div class="text-center" *ngIf="pageIndex == 0">
-                <button class="btn btn-sm f-16 merri-bold bg-theme text-white" style="height: 40px;padding: 0 35px;" (click)="pageIndex = 1">Save & Continue</button>
-                </div>
+                    <div class="text-center" *ngIf="pageIndex == 0">
+                        <button class="btn btn-sm f-16 merri-bold bg-theme text-white" style="height: 40px;padding: 0 35px;" (click)="addMatterDescription()">Save & Continue</button> <!--(click)="pageIndex = 1"-->
+                    </div>
                 </div>
                 </div>
                 <div *ngIf="pageIndex == 1"> 
@@ -70,8 +94,7 @@
                 </span>
                 </div>
                 </div>
-                </div>
-                
+                </div>                
                 </div>
                 </div>
                 <div>

@@ -1,6 +1,11 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AttorneyServiceService } from 'src/app/services/attorney-service.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-attorney-profile',
@@ -14,7 +19,9 @@ export class AttorneyProfileComponent implements OnInit {
     {"education":"Bachelor of Science, Oklahoma State of University"},
     {"education":"Bar Admissions: Colorado Bar, 2013; U.S District Court - Colorado; U.S. Court of Appeals - 10th Circcuit"}]
     closeResult: string;
-    constructor(private modalService: NgbModal,private fb: FormBuilder,) { }
+    constructor(private modalService: NgbModal,private fb: FormBuilder,
+      private loginService:LoginService, private snackBar:MatSnackBar,
+      private attorneyService:AttorneyServiceService,private router:Router,) { }
 
   ngOnInit(): void {
     this.ratings = [
@@ -39,12 +46,35 @@ export class AttorneyProfileComponent implements OnInit {
     ]
 
     this.sendMessageForm = this.fb.group({
-      typedMessage:""
+      typedMessage:["",Validators.required]
     })
   }
 
   sendMessage(){
     console.log(this.sendMessageForm.value)
+    this.modalService.dismissAll();
+    // if(this.sendMessageForm.valid){
+    //   this.loginService.sendMsgToRhTeam(this.sendMessageForm.value).subscribe((posRes)=>{
+    //     console.log(posRes)
+    //     if(posRes.response == 3){      
+    //       console.log("Success",posRes);
+    //       this.openSnackBar(posRes.message,"");
+    //     }else{
+    //       this.openSnackBar(posRes.message,"")
+    //     }
+    //   },(err:HttpErrorResponse)=>{
+    //     this.attorneyService.showLoader.next(false);
+    //     this.openSnackBar(err.message,"");
+    //     if(err.error instanceof Error){
+    //       console.warn("Client Side Error",err.message);
+    //     }else{
+    //       console.warn("Server Side Error",err.message);
+    //     }
+    //   })
+    // }else{
+    //   this.openSnackBar("Provide required data to login","");
+    //   this.sendMessageForm.controls['typedMessage'].markAsTouched();
+    // }
   }
 
   openMessageMethod(openMessageModelContent){
@@ -64,6 +94,14 @@ export class AttorneyProfileComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  //message alerts showing
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+       duration: 3000,
+       verticalPosition: 'bottom'
+    });
   }
 
 }

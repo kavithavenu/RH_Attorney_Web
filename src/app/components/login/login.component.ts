@@ -43,9 +43,9 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.fb.group({
       emailID:["",Validators.required],
       password:["",[Validators.required,Validators.minLength(8)]],
-      deviceID:"123",
-      deviceToken:"123",
-      deviceType:"laptop"
+      deviceID:" ",
+      deviceToken:" ",
+      deviceType:"web"
     });
    
     this.getLatLang()
@@ -97,9 +97,9 @@ getLatLang(){
         this.attorneyService.showLoader.next(false);
         this.openSnackBar(err.message,"");
         if(err.error instanceof Error){
-          console.warn("Client Slide Error",err.message);
+          console.warn("Client Side Error",err.message);
         }else{
-          console.warn("Server Slide Error",err.message);
+          console.warn("Server Side Error",err.message);
         }
       })
     }else{

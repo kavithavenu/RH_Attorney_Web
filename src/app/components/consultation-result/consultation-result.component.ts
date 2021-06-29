@@ -19,7 +19,7 @@ export class ConsultationResultComponent implements OnInit {
   showDescInput:boolean = false;
   sub: any;
   id: any;
-    matterDescriptionsList:any = [
+  matterDescriptionsList:any = [
     {
       "id":"1",
       "data":"matter description one data"
@@ -44,11 +44,12 @@ export class ConsultationResultComponent implements OnInit {
       "id":"6",
       "data":"matter description six data"
     },
-    {
-      "id":"7",
-      "data":"Other"
-    }
+    // {
+    //   "id":"7",
+    //   "data":"Other"
+    // }
   ]
+  insertedMatterDescription: string = '';
     
   constructor(private fb: FormBuilder,private router:Router,private activatedRoute: ActivatedRoute,) { }
 
@@ -60,6 +61,16 @@ export class ConsultationResultComponent implements OnInit {
     this.sendMessageForm = this.fb.group({
       typedMessage:""
     })
+  }
+
+  addMatterDescription(){
+    this.pageIndex = 1;
+    console.log("inserted value...",this.insertedMatterDescription)
+    this.matterDescriptionsList.push({
+      "id":this.matterDescriptionsList.length + 1,
+      "data":this.insertedMatterDescription
+    })
+    console.log("after adding data...",this.matterDescriptionsList)
   }
 
   onLoad(){
@@ -77,14 +88,15 @@ export class ConsultationResultComponent implements OnInit {
     
   }
 
-  selectedDesc(value: any) {
-    console.log(value);
-    this.selectedRow = value.id;
-    if(value.data == "Other"){
-      this.showDescInput = true;
-    }else{
-      this.showDescInput = false;
-    }
+  selectedDesc() {
+    
+    this.showDescInput = true;
+    // this.selectedRow = value.id;
+    // if(value.data == "Other"){
+    //   this.showDescInput = true;
+    // }else{
+    //   this.showDescInput = false;
+    // }
   }
 
   otherOption(){

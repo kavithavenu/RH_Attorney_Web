@@ -6,7 +6,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  public baseUrl = 'http://dev-api.robinsonandhenry.com:3000';
+  //public baseUrl = 'http://dev-api.robinsonandhenry.com:3000';
+  public baseUrl = 'http://18.116.213.67:3000';
   showLoader = new BehaviorSubject(false);
   constructor(private http:HttpClient) { }
 
@@ -61,6 +62,14 @@ export class LoginService {
   //changepassword
   changePassword(data):Observable<any>{
     return this.http.post(`${this.baseUrl}/api/attorneys/changepassword`,data)
+  }
+
+  //send msg to rh team
+  sendMsgToRhTeam(data):Observable<any>{
+    console.log("sended data from sendmesg ... :",data);
+    var resObj = {"response":3,"message":"success"};
+    
+    return this.http.post(`${this.baseUrl}`,data)
   }
 
 }
