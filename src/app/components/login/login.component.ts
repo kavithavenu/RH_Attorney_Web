@@ -86,7 +86,7 @@ getLatLang(){
         this.attorneyService.showLoader.next(false);
         if(posRes.response == 3){      
           console.log("Success",posRes);
-          localStorage.setItem('custInfo',JSON.stringify(posRes.clientInfo));
+          localStorage.setItem('attorneyInfo',JSON.stringify(posRes.clientInfo));
           this.openSnackBar(posRes.message,"");
           this.attorneyService.isLoggedIn.next(true);
           this.router.navigateByUrl('/main')
@@ -119,7 +119,7 @@ getLatLang(){
       this.attorneyService.showLoader.next(false);
       if(posRes.response == 3){
         this.user = {...posRes.clientInfo}
-        localStorage.setItem('custInfo',JSON.stringify(this.user));
+        localStorage.setItem('attorneyInfo',JSON.stringify(this.user));
         this.rememberMe ? localStorage.setItem('rememberme','true') : localStorage.setItem('rememberme','false');
         this.openSnackBar(posRes.message,"");
         this.attorneyService.isLoggedIn.next(true);
@@ -141,4 +141,6 @@ getLatLang(){
   rememberMe(event){
     console.log(event.checked);
   }
+
+  
 }

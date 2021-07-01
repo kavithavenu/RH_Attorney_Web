@@ -29,7 +29,7 @@ export class UpdatePasswordComponent implements OnInit {
     console.log("Attorney signed-in data...", AttorneySignInData);
     //Change Pwd
   this.updatePasswordForm = this.fb.group({
-    "emailID":[""],
+    "emailID":AttorneySignInData.emailID,
     "oldPassword": ['', [Validators.required, Validators.minLength(8)]],//[Validators.required,Validators.pattern(^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,13}$)]
     //"newPassword": ['', [Validators.required,Validators.pattern('(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,13}')]],//Validators.minLength(8)
     "newPassword": ['', [Validators.required,Validators.pattern("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%])(?=\\S+$).{8,13})")]],

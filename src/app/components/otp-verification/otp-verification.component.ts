@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AttorneyServiceService } from 'src/app/services/attorney-service.service';
 import { LoginService } from 'src/app/services/login.service';
@@ -29,7 +30,7 @@ export class OtpVerificationComponent implements OnInit {
   isError:boolean = false;
   constructor(private modalService:NgbModal,private dialogRef:MatDialogRef<ScheduleComponent>,
      @Inject(MAT_DIALOG_DATA) public data: any, private loginService:LoginService, 
-     private attorneyService:AttorneyServiceService) { }
+     private attorneyService:AttorneyServiceService,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     
@@ -80,13 +81,16 @@ resend(){
         this.attorneyService.showLoader.next(false);
         // this.openSnackBar(posRes.message,"")
         if(posRes.response == 3){
+          this.openSnackBar(posRes.message,"");
           this.dialogRef.close(posRes)
         }else{
+          this.openSnackBar(posRes.message,"");
           this.alertType = "danger";
           this.alertMsg = posRes.message;
           this.showAlert = true;
         }
       },(err:HttpErrorResponse)=>{
+        this.openSnackBar(err.message,"");
         this.attorneyService.showLoader.next(false);
         this.alertType = "danger";
         this.alertMsg = err.message;
@@ -100,6 +104,14 @@ resend(){
     }else{
       this.isError = true;
     }
+  }
+
+   //message alerts showing
+   openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+       duration: 3000,
+       verticalPosition: 'bottom'
+    });
   }
   
 }

@@ -58,7 +58,7 @@ const routes: Routes = [
     {path:"",redirectTo:"profile",pathMatch:"full"}]
   },
   {path:"jointhecall",component:JoinTheCallComponent},
-  {path:"**",redirectTo:"main",pathMatch:"full"}
+  {path:"**",redirectTo:"login",pathMatch:"full"}
 ];
 
 @NgModule({

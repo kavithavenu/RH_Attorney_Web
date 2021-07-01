@@ -7,7 +7,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class LoginService {
   //public baseUrl = 'http://dev-api.robinsonandhenry.com:3000';
-  public baseUrl = 'http://18.116.213.67:3000';
+  public baseUrl = 'http://dev-api.robinsonandhenry.com';
+  //public baseUrl = 'http://18.116.213.67:3000';
   showLoader = new BehaviorSubject(false);
   constructor(private http:HttpClient) { }
 
@@ -28,40 +29,40 @@ export class LoginService {
   }
    // Login
    login(data):Observable<any>{
-    return this.http.post(`${this.baseUrl}/api/attorneys/login`,data);
+    return this.http.post(`${this.baseUrl}/api/attorney/login`,data);
   }
 
   socialMediaLogin(data):Observable<any>{
-    return this.http.post(`${this.baseUrl}/api/attorneys/social_media`,data)
+    return this.http.post(`${this.baseUrl}/api/attorney/social_media`,data)
   }
 
   // Fetch Clients data
   fetchUserInfo(data):Observable<any>{
-    return this.http.post(`${this.baseUrl}/api/attorneys/FetchAttorney`,data);
+    return this.http.post(`${this.baseUrl}/api/attorney/FetchAttorney`,data);
   }
   
   // Forgot Password
   forgotPass(data):Observable<any>{
-    return this.http.post(`${this.baseUrl}/api/attorneys/forgotpassword`,data)
+    return this.http.post(`${this.baseUrl}/api/attorney/forgotpassword`,data)
   }
 
   //Verify OTP
   verifyOTP(data):Observable<any>{
-    return this.http.post(`${this.baseUrl}/api/attorneys/verify`,data)
+    return this.http.post(`${this.baseUrl}/api/attorney/verify`,data)
   }
   // resend OTP
   resendOtp(data):Observable<any>{
-    return this.http.post(`${this.baseUrl}/api/attorneys/resendOtp`,data);
+    return this.http.post(`${this.baseUrl}/api/attorney/resendOtp`,data);
   }
   
   // Reset Pass
   resetPass(data):Observable<any>{
-    return this.http.post(`${this.baseUrl}/api/attorneys/reset_password`,data)
+    return this.http.post(`${this.baseUrl}/api/attorney/reset_password`,data)
   }
 
   //changepassword
   changePassword(data):Observable<any>{
-    return this.http.post(`${this.baseUrl}/api/attorneys/changepassword`,data)
+    return this.http.post(`${this.baseUrl}/api/attorney/changepassword`,data)
   }
 
   //send msg to rh team

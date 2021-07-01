@@ -6,7 +6,9 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AttorneyServiceService {
   //public baseUrl = 'http://dev-api.robinsonandhenry.com:3000';
-  public baseUrl = 'http://18.116.213.67:3000';
+  //public baseUrl = 'http://18.116.213.67:3000';
+  public baseUrl = 'http://dev-api.robinsonandhenry.com';
+  
   showLoader = new BehaviorSubject(false);
   public isLoggedIn = new BehaviorSubject(false);
   constructor() { }

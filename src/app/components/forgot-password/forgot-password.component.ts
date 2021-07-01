@@ -76,9 +76,12 @@ verifyOtp(obj){
   this.attorneyService.showLoader.next(true);
   this.loginService.verifyOTP(obj).subscribe((posRes)=>{
     this.attorneyService.showLoader.next(false);
-    this.openSnackBar(posRes.message,"");
+    
     if(posRes.response == 3){
-
+      this.openSnackBar(posRes.message,"");
+    }
+    else{
+      this.openSnackBar(posRes.message,"");
     }
   },(err:HttpErrorResponse)=>{
     this.attorneyService.showLoader.next(false);
