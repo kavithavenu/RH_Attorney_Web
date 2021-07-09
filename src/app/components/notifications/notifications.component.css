@@ -15,7 +15,7 @@
     border: transparent;
   }
   .notify-row:hover .notification-img{
-    background: url("../../../assets/RobinsonandHenry_Square_White_Logo.png") no-repeat center center;
+    background: url("../../../assets/logo_1.png") no-repeat center center;
   background-size: cover;
   }
   
@@ -28,7 +28,7 @@
     color: #ffffff;
   } */
   .notification-img{
-    background: url("../../../assets/RobinsonandHenry_Square_DarkBlue_Logo.png") no-repeat center center;
+    background: url("../../../assets/logo_2.png") no-repeat center center;
     width: 40px;
     height: 40px;
     -webkit-background-size: cover;

@@ -19,7 +19,7 @@
                 </div>      
                 <div style="margin: auto;
                 margin-right: 30px;">
-                    <img src="../../../assets/edit.png" style="width: 1.3rem;" (click)="openMessageMethod(openMessageModelContent)">
+                    <img src="../../../assets/edit.png" style="width: 1.3rem;cursor: pointer;" (click)="openMessageMethod(openMessageModelContent)">
                 </div>          
             </div>
         </div>
@@ -145,14 +145,15 @@
             <div class="raleway-bold f-17 theme-color" style="text-align: start;padding: 10px 0px;">
                 Message to R&H Marketing Department
             </div>
-            <div>
+            <div class="input-text-box">
                 <form [formGroup]="sendMessageForm" >
-                    <!-- <mat-form-field>  matInput-->
-                        <textarea formControlName="typedMessage" class="proxi-reg f-15" style="width: 100%;border: 1px solid #707070;letter-spacing: 0px;
+                    <mat-form-field>  
+                        <textarea matInput formControlName="typedMessage" class="proxi-reg f-15" style="width: 100%;border: 1px solid #707070;letter-spacing: 0px;
                         color: #0F1010;text-align: left;outline: none;height: 15vh;padding: 7px;">
                         </textarea>
-                        <!-- <mat-error>Enter Message</mat-error> -->
-                    <!-- </mat-form-field> -->
+                        <mat-error *ngIf="sendMessageForm.get('typedMessage').hasError('required')"> Enter Message to finish this*</mat-error>
+                            
+                    </mat-form-field>
                 </form>
             </div>
             <div style="text-align: center;padding: 40px;">

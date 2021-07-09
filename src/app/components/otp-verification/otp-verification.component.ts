@@ -49,6 +49,7 @@ resend(){
   this.attorneyService.showLoader.next(true);
   let obj = {emailID:this.data}
   this.loginService.resendOtp(obj).subscribe((posRes)=>{
+    console.log("resend otp res...",posRes);
     this.attorneyService.showLoader.next(false);
     if(posRes.response == 3){
       this.alertType = "success";

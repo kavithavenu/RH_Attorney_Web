@@ -8,8 +8,7 @@
 })
 export class ClientscheduleComponent implements OnInit {
 
-
-
+  signedInAs:any = JSON.parse(localStorage.getItem('attorneySignAs'));
   constructor() { }
 
   ngOnInit(): void {

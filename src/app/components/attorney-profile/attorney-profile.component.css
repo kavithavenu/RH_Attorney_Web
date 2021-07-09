@@ -36,3 +36,9 @@
   /* ::ng-deep .modal.show .modal-dialog {
       margin-top: 20vh !important;
   } */
+  ::ng-deep .input-text-box .mat-form-field {
+    width: 100%;
+  }
+  ::ng-deep .input-text-box .mat-form-field-appearance-legacy .mat-form-field-underline {
+  display: none;
+  }

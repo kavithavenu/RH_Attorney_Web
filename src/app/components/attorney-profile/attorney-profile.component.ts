@@ -51,8 +51,13 @@ export class AttorneyProfileComponent implements OnInit {
   }
 
   sendMessage(){
+    if(!this.sendMessageForm.valid){      
+      this.openSnackBar("Please Provide data to complete this.","");
+      return;
+    }
     console.log(this.sendMessageForm.value)
     this.modalService.dismissAll();
+    this.sendMessageForm.reset();
     // if(this.sendMessageForm.valid){
     //   this.loginService.sendMsgToRhTeam(this.sendMessageForm.value).subscribe((posRes)=>{
     //     console.log(posRes)

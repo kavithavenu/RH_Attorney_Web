@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   isLoggedIn:boolean = false;
   lat:any;
   lang:any;
+  attorneyLogginedAs:any;
   constructor(private fb:FormBuilder, private router:Router,private authService: SocialAuthService, 
     private attorneyService:AttorneyServiceService, private loginService:LoginService, private snackBar:MatSnackBar) {
     
@@ -86,6 +87,10 @@ getLatLang(){
         this.attorneyService.showLoader.next(false);
         if(posRes.response == 3){      
           console.log("Success",posRes);
+          this.attorneyLogginedAs = posRes.clientInfo.profileName;
+          console.log("attorney logged in as a ...",this.attorneyLogginedAs);
+          localStorage.setItem('attorneySignAs',JSON.stringify(this.attorneyLogginedAs));
+          console.log("attorney logged in as a from local data...",JSON.parse(localStorage.getItem('attorneySignAs')));
           localStorage.setItem('attorneyInfo',JSON.stringify(posRes.clientInfo));
           this.openSnackBar(posRes.message,"");
           this.attorneyService.isLoggedIn.next(true);

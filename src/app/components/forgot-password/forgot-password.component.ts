@@ -39,7 +39,7 @@ export class ForgotPasswordComponent implements OnInit {
   submit(){
     if(!this.forgotForm.valid){
       
-      this.openSnackBar("Provide required data to forgot","");
+      this.openSnackBar("Provide an Email to complete this.","");
       return;
     }
     this.attorneyService.showLoader.next(true);

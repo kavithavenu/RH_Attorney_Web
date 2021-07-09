@@ -15,8 +15,8 @@ imgSrc:string = "assets/users_1.png";
 routerEndPoint:string = "";
 homePageVisitingCount:number = 0;
 custInfo:any;
-baseUrl:string = "";
-proPic:string = "assets/ic_md@2x.png"
+baseUrl:string = "http://dev-api.robinsonandhenry.com";
+proPic:string = "assets/ic_md@2x.png";
   constructor(private router:Router, private dialog:MatDialog, private attorneyService:AttorneyServiceService, private activatedRoute:ActivatedRoute) { 
     this.attorneyService.isLoggedIn.subscribe(val => {
       this.isLoggedIn = val;
@@ -48,11 +48,11 @@ proPic:string = "assets/ic_md@2x.png"
     if(info && info.profilePic){
       this.custInfo = info;
       this.isLoggedIn = true;
-      debugger;
+      console.log("data...",this.custInfo)
       if(this.custInfo.register_type === "Manual" || this.custInfo.isProfileUpdate){
         this.proPic = this.baseUrl+this.custInfo.profilePic;
       }else{
-        this.proPic = this.custInfo.profilePic;
+        this.proPic = this.baseUrl+this.custInfo.profilePic;
       }
 
     }
